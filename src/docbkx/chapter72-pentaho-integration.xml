@@ -15,6 +15,30 @@
 		</abstract>
 	</chapterinfo>
 
+	<section id="pentaho_configure_dc_installation">
+	<title>Configure DataCleaner in Pentaho Data Integration </title>
+		<para>
+			In order to use the plugin of DataCleaner in Pentaho, it is required to
+			have a local installation of DataCleaner. The DataCleaner
+			installation can be either a community or a professional
+			edition. The configuration can be set from "Tools". Moreover, after setting the DataCleaner configuration, from the same menu one can launch DataCleaner independent of context in Pentaho. 
+		</para>
+		
+		<mediaobject>
+			<imageobject>
+				<imagedata fileref="pdi-tools-menu.png" format="PNG"
+					scalefit="1" />
+			</imageobject>
+		</mediaobject>
+		
+		<mediaobject>
+			<imageobject>
+				<imagedata fileref="pdi_dc_configuration.png" format="PNG"
+					scalefit="1" />
+			</imageobject>
+		</mediaobject>
+		
+	</section>
 	<section id="pentaho_launch_dc_from_pdi">
 		<title>Launch DataCleaner to profile Pentaho Data Integration steps
 		</title>
@@ -54,16 +78,19 @@
 			<emphasis>Carte</emphasis>
 			service provided by Pentaho Data Integration.
 		</para>
-		
+
 		<tip>
-			<para>For more information on configuring Carte, we recommend the Pentaho wiki page on the subject:
-			
-			<link xl:href="http://wiki.pentaho.com/display/EAI/Carte+Configuration">http://wiki.pentaho.com/display/EAI/Carte+Configuration</link>
-			
+			<para>
+				For more information on configuring Carte, we recommend the Pentaho
+				wiki page on the subject:
+
+				<link xl:href="http://wiki.pentaho.com/display/EAI/Carte+Configuration">http://wiki.pentaho.com/display/EAI/Carte+Configuration
+				</link>
+
 			</para>
-			
+
 		</tip>
-		
+
 		<para>To set up the job in DataCleaner monitor, go to the 'Scheduling'
 			page and click 'Build job'. Select the Pentaho Data Integration
 			transformation option:
@@ -100,7 +127,7 @@
 			ETL tool that includes a scheduler.
 		</para>
 		<para>Construct a PDI "job" (ie. not a "transformation") and add the
-			DataCleaner job entry. The configuration dialog will look like
+			DataCleaner job entry. The entry can be found in the submenu 'Utility'. The configuration dialog will look like
 			this:
 		</para>
 		<mediaobject>
