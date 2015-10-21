@@ -20,7 +20,7 @@
 
 		<para>Data quality metrics are all contained within result files.
 			Depending on the job that produced the result, the result may contain
-			different metrics. For instancec, if you have a Value distribution
+			different metrics. For instance, if you have a Value distribution
 			analyzer in the job, your result will expose a "Value count" metric
 			(and many more).
 		</para>

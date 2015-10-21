@@ -368,7 +368,7 @@
 			metrics
 			for string column types. Of special concern to the string analyzer is
 			the amount of words, characters, special signs, diacritics and other
-			metrics that are virtal to understanding what kind of string values
+			metrics that are vital to understanding what kind of string values
 			occur in the data.
 		</para>
 	</section>

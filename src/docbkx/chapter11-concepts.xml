@@ -154,13 +154,13 @@
 			that your improvements are enforced through time. This is what data
 			monitoring is typically about.
 		</para>
-		<para>Data monitoring solutions comes in different shapes and sizes.
+		<para>Data monitoring solutions come in different shapes and sizes.
 			You can set
 			up your own bulk of scheduled jobs that run every night.
 			You can
 			build alerts around it that send you emails if a particular
 			measure
-			goes beyond it's allowed thresholds, or in some cases you can
+			goes beyond its allowed thresholds, or in some cases you can
 			attempt
 			ruling out the issue entirely by applying First-Time-Right
 			(FTR)
@@ -175,7 +175,7 @@
 			timelines and reports. It also supports the configuration and
 			job-building process through wizards and management pages for all the
 			components of the solution. As such, we like to say that the
-			DataCleaner monitor provides a is a good
+			DataCleaner monitor provides a good
 			foundation for the
 			infrastructure needed in a Master Data Management
 			hub.

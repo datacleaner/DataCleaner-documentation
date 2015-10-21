@@ -34,7 +34,7 @@
 			perform rather intricate things like conditioning,
 			looping. It can also be
 			used as a
-			useful way to express small business
+			way to express small business
 			rules.
 		</para>
 		<para>For this documentation, a complete reference of JavaScript is
@@ -338,10 +338,10 @@
 			<emphasis>Union</emphasis>
 			transformation and a
 			<link linkend="what_is_datastore">composite datastore</link>
-			. The composite datastore constains several data sources,
+			. The composite datastore contains several data sources,
 			each with customer information. The Union transformer in this
 			example aims to combine tables of these data sources so that a
-			single stream of data can be consumed with record from all the sources.
+			single stream of data can be consumed with records from all the sources.
 		</para>
 		<mediaobject>
 			<imageobject>

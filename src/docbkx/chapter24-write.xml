@@ -44,7 +44,7 @@
 			An advantage of this
 			approach is that a single file can contain
 			multiple sheets, and that
-			it is easily navigatable in Microsoft
+			it is easily navigable in Microsoft
 			Excel. A disadvantage is that
 			for very large data sets it is less
 			performant.

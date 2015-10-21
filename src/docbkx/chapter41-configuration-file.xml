@@ -513,7 +513,7 @@
 
 	<section id="configuration_file_task_runner">
 		<title>Task runner</title>
-		<para>The task runner defines how DataCleaner's will engine will
+		<para>The task runner defines how DataCleaner's engine will
 			execute the tasks of an analysis job. Typically you shouldn't edit
 			this element. However, here are the two options:
 		</para>

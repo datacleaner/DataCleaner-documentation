@@ -13,7 +13,7 @@
 	</para>
 
 	<para>
-		The simples way to embed DataCleaner is simply by doing what
+		The simplest way to embed DataCleaner is simply by doing what
 		DataCleaner's main executable does - instantiate the
 		<emphasis>Bootstrap</emphasis>
 		class with default arguments:
