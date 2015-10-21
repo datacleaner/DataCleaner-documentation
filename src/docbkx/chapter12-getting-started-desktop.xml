@@ -295,7 +295,7 @@
 			<para>
 				Using "Link to...", it is also possible to wire several filters to a component
 				in a kind of diamond shape. In that case, if <emphasis>any</emphasis> of the the filter requirements
-				to be met, the record will be passed to the component (OR logic).
+				are met, the record will be passed to the component (OR logic).
 			</para>
 
 			<mediaobject>
