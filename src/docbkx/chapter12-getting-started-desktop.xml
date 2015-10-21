@@ -278,8 +278,8 @@
 			</para>
 
 			<para>If you have multiple filters you can chain these simply by having dependent
-				outcomes of the individual filters. This will require all outcomes in the chain
-				to be valid for a record to be passed to the component (AND logic).
+				outcomes of the individual filters. This will require <emphasis>all</emphasis> filter requirements in
+				the chain to be met, for a record to be passed to the component (AND logic).
 			</para>
 
 			<mediaobject>
@@ -294,8 +294,8 @@
 
 			<para>
 				Using "Link to...", it is also possible to wire several filters to a component
-				in a kind of diamond shape. In that case, if any of the the filters are valid,
-				the record will be passed to the component (OR logic).
+				in a kind of diamond shape. In that case, if <emphasis>any</emphasis> of the the filter requirements
+				to be met, the record will be passed to the component (OR logic).
 			</para>
 
 			<mediaobject>
