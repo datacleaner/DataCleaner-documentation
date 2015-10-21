@@ -15,13 +15,13 @@
 		</abstract>
 	</chapterinfo>
 
-	<section id="configure_dc_installation">
+	<section id="pentaho_configure_dc_installation">
 	<title>Configure DataCleaner in Pentaho Data Integration </title>
 		<para>
 			In order to use the plugin of DataCleaner in Pentaho, it is required to
 			have a local installation of DataCleaner. The DataCleaner
-			installation can be both a community or a professional
-			edition. The configuration can be set from "Tools". Moreover, after setting the DataCleaner configuration, from the same menu one can launch DataCleaner independently of Pentaho. 
+			installation can be either a community or a professional
+			edition. The configuration can be set from "Tools". Moreover, after setting the DataCleaner configuration, from the same menu one can launch DataCleaner independent of context in Pentaho. 
 		</para>
 		
 		<mediaobject>
@@ -127,7 +127,7 @@
 			ETL tool that includes a scheduler.
 		</para>
 		<para>Construct a PDI "job" (ie. not a "transformation") and add the
-			DataCleaner job entry.The entry can be found in submenu 'Utility'. The configuration dialog will look like
+			DataCleaner job entry. The entry can be found in the submenu 'Utility'. The configuration dialog will look like
 			this:
 		</para>
 		<mediaobject>
