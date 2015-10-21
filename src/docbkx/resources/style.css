@@ -195,6 +195,11 @@ body>div {
 	margin-bottom: 1em;
 }
 
+.mediaobject .caption p{
+	font-size: 12px;
+	font-weight: bold;
+}
+
 .abstract {
 	margin: 10px;
 	padding: 12px;
