@@ -291,12 +291,12 @@
 				</listitem>
 				<listitem>
 					<para>forces pairs to be unique when equals - The pair is never
-						a duplicate if any columns marked with this value is different.
+						a duplicate if any columns marked with this value are different.
 					</para>
 				</listitem>
 				<listitem>
 					<para>forces pairs to be unique when different - The pair is never
-						a duplicate if any columns marked with this value is different
+						a duplicate if any columns marked with this value are different
 					</para>
 				</listitem>
 				<listitem>
@@ -432,7 +432,7 @@
 				'Untrained detection' mode
 			</title>
 			<para>Finally, there's also a 'Untrained detection' mode. This allows
-				you to skip 'Model training' and just ask the application to do it's
+				you to skip 'Model training' and just ask the application to do its
 				best effort without any proper model. This mode is not recommended
 				for production use and is considered 'experimental', but may provide
 				a great quick impression of some of the duplicates you have in your
@@ -488,7 +488,7 @@
 
 			<para>
 				Add "Merge duplicates (Simple)" transformer to your job, and configure the new component.
-				change the scope to <emphasis>"Duplicate Detection: Duplicate and unique
+				Change the scope to <emphasis>"Duplicate Detection: Duplicate and unique
 				rows"</emphasis>. Now click "Select all", then disable the four synthetic columns
 				<emphasis>Record id</emphasis>,<emphasis>Group id</emphasis>,
 				<emphasis>Group size</emphasis> and <emphasis>Group score</emphasis>.
@@ -538,7 +538,7 @@
 
 			<para>
 				Let's add an Equals filter to the job in order to write only these
-				SURVIVOR and UNIQUE records, to create a data set with has no duplicates.
+				SURVIVOR and UNIQUE records, to create a data set with no duplicates.
 			</para>
 
 			<mediaobject>
@@ -595,7 +595,7 @@
 			ability to standardize and cleanse data. Using this component you can
 			look up values in a
 			<link linkend="synonym_catalogs">synonym catalog</link>
-			and have it replaced with it's master term, if it is found to be a
+			and have it replaced with its master term, if it is found to be a
 			synonym.
 		</para>
 		<para>Below is a screenshot of the synonym lookup's configuration

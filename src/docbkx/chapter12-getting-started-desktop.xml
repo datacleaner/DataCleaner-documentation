@@ -385,7 +385,7 @@
 					The
 					<emphasis>Progress information</emphasis>
 					tab which contains useful information and progress indications
-					while the job is executing.
+					while the job is being executed.
 				</para>
 			</listitem>
 			<listitem>
@@ -407,7 +407,7 @@
 	<section id="saving_and_opening_jobs">
 		<title>Saving and opening jobs</title>
 		<para>You can save your jobs in order to reuse them at a later time.
-			Saving a job is simple: Simply click the "Save" button
+			Saving a job is simple: just click the "Save" button
 			in the top
 			panel of the window.
 		</para>

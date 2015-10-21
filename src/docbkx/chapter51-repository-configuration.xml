@@ -35,7 +35,7 @@
 		<section>
 			<title>Directory-based repository</title>
 			<para>
-				To change the repository location, create of find the file
+				To change the repository location, create or find the file
 				<emphasis>${user.home}/.datacleaner/datacleaner-monitor.properties
 				</emphasis>
 				. Make sure that it contains a key 'repository.file.location' and
@@ -80,7 +80,7 @@
 				</emphasis>
 				. In this file you will see two bean definitions with
 				id="repository". One of them is active (the file based) by default,
-				and on is commented (the database variant).
+				and one is commented (the database variant).
 			</para>
 			<para>Change it so that the file-based repository bean is commented
 				and the database-backed repository is active. Also consider the two

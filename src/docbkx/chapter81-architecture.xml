@@ -80,7 +80,7 @@
 			The multithreading strategy in DataCleaner enables the tool to have
 			the minimum amount of blocking and buffering and the maximum amount
 			of parallelism and potentially also distribution. Most ETL-like tools
-			apply a threading strategy where each component in a job has it's own
+			apply a threading strategy where each component in a job has its own
 			thread-management as well as an input- and an output-buffer. In
 			DataCleaner the thread management is made such that every record is
 			processed in parallel - each unit of work is stepping through the
@@ -89,7 +89,7 @@
 		</para>
 		<orderedlist>
 			<listitem>
-				<para>There's is a high degree of automatic 'load balancing' among
+				<para>There is a high degree of automatic 'load balancing' among
 					the components - less constraints and bottlenecks around the
 					slowest components in the job.
 				</para>

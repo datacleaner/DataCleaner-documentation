@@ -234,7 +234,7 @@
 		</para>
 
 		<programlisting>
-			POST&#160;/DataCleaner-monitor/repository/{tenant}/jobs/{job}.modify
+			POST&#160;/DataCleaner-monitor/repository/{tenant}/jobs/{job}.copy
 		</programlisting>
 
 		<para>The POST request body needs to be a JSON document, specifying

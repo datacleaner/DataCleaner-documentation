@@ -95,7 +95,7 @@
 		</programlisting>
 		<para>The added value of this metadata is that DataCleaner can expose
 			this information to the user and also use it to manage updates of the
-			the extension etc. The metadata file is however, completely optional.
+			extension etc. The metadata file is however, completely optional.
 		</para>
 	</section>
 

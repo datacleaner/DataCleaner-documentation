@@ -78,7 +78,7 @@
 
 		<para>There are multiple ways to add a new job to DataCleaner monitor.
 			The
-			most fail-safe way is to use one of the job wizards. These are
+			easiest way is to use one of the job wizards. These are
 			found on the
 			'Scheduling' page, using the "Build job" button.
 		</para>
@@ -159,7 +159,7 @@
 							format="JPG" scalefit="1" />
 					</imageobject>
 				</mediaobject>
-				<para>The three types of triggering is explained on the screen:
+				<para>The three types of triggering are explained on the screen:
 					Periodic trigger, Dependent trigger, Manual trigger.
 				</para>
 			</listitem>
@@ -219,7 +219,7 @@
 					<listitem>
 						<para>
 							<emphasis>History</emphasis>
-							, which displays a dialog with execution log information about
+							, which displays a dialog with log information about
 							each triggered job execution.
 						</para>
 					</listitem>
@@ -249,7 +249,7 @@
 					scalefit="1" />
 			</imageobject>
 		</mediaobject>
-		<para>Note that the contents of the dialog is highly dependent on the
+		<para>Note that the content of the dialog is highly dependent on the
 			contents of the selected job, so the screenshot above will not
 			necesarily resemble the options available to you.
 		</para>
