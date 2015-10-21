@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.oasis-open.org/docbook/4.5" xmlns:xl="http://www.w3.org/1999/xlink"
-		 id="improve" xsi:schemaLocation="http://www.oasis-open.org/docbook/4.5 http://www.oasis-open.org/docbook/xsd/4.5/docbook.xsd">
+	id="improve"
+	xsi:schemaLocation="http://www.oasis-open.org/docbook/4.5 http://www.oasis-open.org/docbook/xsd/4.5/docbook.xsd">
 
 	<title>Improve</title>
 
@@ -173,14 +174,19 @@
 				</imageobject>
 			</mediaobject>
 
-			<para>To help you, columns with equal values are shown in a grey font, while
+			<para>To help you, columns with equal values are shown in a grey
+				font, while
 				different values are shown in black.
 			</para>
 
-			<para>Right-clicking on the classification button opens a small menu that allows you to
-				mark all examples on the (remainder of) this page or all examples on all pages as
-				Undecided, duplicates or uniques. This helps when almost all examples are duplicates
-				or uniques. You can mark all examples as duplicates, review, and only toggle the
+			<para>Right-clicking on the classification button opens a small menu
+				that allows you to
+				mark all examples on the (remainder of) this page
+				or all examples on all pages as
+				Undecided, duplicates or uniques.
+				This helps when almost all examples are duplicates
+				or uniques. You
+				can mark all examples as duplicates, review, and only toggle the
 				examples that are no duplicates.
 			</para>
 
@@ -208,9 +214,12 @@
 				amount of pairs.
 			</para>
 
-			<para>The model is automatically saved every time after training. There
-				is no need to save the model by hand. The saved model includes the
-				matching rules, settings, and all pairs the user classified as duplicate or unique.
+			<para>The model is automatically saved every time after training.
+				There
+				is no need to save the model by hand. The saved model includes
+				the
+				matching rules, settings, and all pairs the user classified as
+				duplicate or unique.
 			</para>
 
 			<para>Some more hints for training:
@@ -219,22 +228,29 @@
 			<orderedlist>
 				<listitem>
 					<para>Classifying uniques is just as important as classifying
-					duplicates. Keep the numbers of duplicate examples and unique
-					examples roughly equal.
+						duplicates. Keep the numbers of duplicate examples and unique
+						examples roughly equal.
 					</para>
 				</listitem>
 				<listitem>
 					<para>Try to find and mark some examples of every duplicate
-					category that you know of. You can use the "search pairs" tool to help you.
+						category that you know of. You can use the "search pairs" tool to
+						help you.
 					</para>
 				</listitem>
 				<listitem>
-					<para>Sometimes the machine learning gets skewed and does not provide
+					<para>
+						Sometimes the machine learning gets skewed and does not provide
 						examples of a category of duplicate records or unique records.
-						In those cases, close then re-open the training tool as described below, but do
-						<emphasis>not</emphasis> press the train model button yet. The training
-						tool shows a less specialised set of duplicate samples. You should now be
-						able to find examples of the category you need added to the model.
+						In
+						those cases, close then re-open the training tool as described
+						below, but do
+						<emphasis>not</emphasis>
+						press the train model button yet. The training
+						tool shows a less
+						specialised set of duplicate samples. You should now be
+						able to
+						find examples of the category you need added to the model.
 					</para>
 				</listitem>
 			</orderedlist>
@@ -255,10 +271,14 @@
 				the tab 'Duplicates reference'.
 			</para>
 
-			<para>If you're looking for particular types of duplicate pair examples, you
-				may want to go to the 'Search pairs' tab. In this tab you will find
-				options to search for records with matching or non-matching values
-				for particular fields. This may be a very useful shortcut for
+			<para>If you're looking for particular types of duplicate pair
+				examples, you
+				may want to go to the 'Search pairs' tab. In this tab
+				you will find
+				options to search for records with matching or
+				non-matching values
+				for particular fields. This may be a very useful
+				shortcut for
 				finding proper duplicate examples.
 			</para>
 
@@ -266,21 +286,33 @@
 				sliders for you to influence the Machine Learning approach.
 			</para>
 
-			<para>Moving the top slider to the left makes duplicate detection compare
-				more records. This will take more time, but also increase the matching
-				quality. Moving this slider to the right makes duplicate detection to
-				make less comparisons, resulting in higher speed, but can lead to more
+			<para>Moving the top slider to the left makes duplicate detection
+				compare
+				more records. This will take more time, but also increase the
+				matching
+				quality. Moving this slider to the right makes duplicate
+				detection to
+				make less comparisons, resulting in higher speed, but
+				can lead to more
 				missed matches (false negatives).
 			</para>
 
-			<para>Moving the bottom slider to the left makes comparison of records more
-			    strict. Moving this slider to the right makes it more lax.
+			<para>Moving the bottom slider to the left makes comparison of
+				records more
+				strict. Moving this slider to the right makes it more
+				lax.
 			</para>
 
-			<para>The user defined rules enable you to enforce fixed rules. The possible
-			     types of fixed rules are listed below. You can apply a rule to each column.
-			     Rules that force a pair to be unique take precedence over rules that force
-			     a pair to be duplicate. Empty values count as different.
+			<para>The user defined rules enable you to enforce fixed rules. The
+				possible
+				types of fixed rules are listed below. You can apply a rule
+				to each
+				column.
+				Rules that force a pair to be unique take precedence
+				over rules that
+				force
+				a pair to be duplicate. Empty values count as
+				different.
 			</para>
 
 			<orderedlist>
@@ -291,7 +323,8 @@
 				</listitem>
 				<listitem>
 					<para>forces pairs to be unique when equals - The pair is never
-						a duplicate if any columns marked with this value is different.
+						a
+						duplicate if any columns marked with this value is different.
 					</para>
 				</listitem>
 				<listitem>
@@ -300,19 +333,25 @@
 					</para>
 				</listitem>
 				<listitem>
-					<para>forces pairs to be duplicate when equals and unique when different -
-						The pair is never a duplicate if any columns marked with this value is different,
-						but the pairs is always a duplicate if all columns marked with this value are equal.
+					<para>forces pairs to be duplicate when equals and unique when
+						different -
+						The pair is never a duplicate if any columns marked
+						with this value is different,
+						but the pairs is always a duplicate
+						if all columns marked with this value are equal.
 					</para>
 				</listitem>
 				<listitem>
-					<para>forces pairs to be unique when equals and unique when different - The pair is
-						never a duplicate unless the value in one of the records is empty.
+					<para>forces pairs to be unique when equals and unique when
+						different - The pair is
+						never a duplicate unless the value in one
+						of the records is empty.
 					</para>
 				</listitem>
 			</orderedlist>
 
-			<para>We recommend applying fixed rules only after training the model and only
+			<para>We recommend applying fixed rules only after training the model
+				and only
 				when strictly necessary.
 			</para>
 
@@ -323,16 +362,19 @@
 				and false
 				negatives) then he can save the model and start using it in
 				duplicate detection. Otherwise, the user can classify
-				more of the presented samples and refine the model
+				more of the
+				presented samples and refine the model
 				again.
 			</para>
 			<para>
 				More training typically allows for a more advanced
-				matching model,
+				matching
+				model,
 				capable of handling more corner cases. The false
 				negatives and
 				false positives lists give a good impression of the
-				current state of the
+				current state of
+				the
 				matching model. The user should continue
 				training until the
 				differences
@@ -342,7 +384,8 @@
 			<para>To validate the training results and obtain the best model,
 				training can be repeated on a different sample. The already
 				classified record pairs will automatically be added to the
-				new sample.
+				new
+				sample.
 			</para>
 
 			<orderedlist>
@@ -388,7 +431,8 @@
 			</para>
 
 			<para>When you run the job, you will see
-				a Duplicate detection result with complete groups of duplicates,
+				a Duplicate detection result
+				with complete groups of duplicates,
 				like this:
 			</para>
 
@@ -401,14 +445,21 @@
 
 			<para>Once you have a duplicate detection result that you wish to
 				post-process, e.g. manual inspection, you can export
-				the result by clicking the 'Write duplicates' button in the top of the result screen.
-				You can save the duplicate records, the duplicate pairs and also the unique records in
-				a datastore table of your choice. Or you can create an excel file or a staging table.
+				the result by
+				clicking the 'Write duplicates' button in the top of the result
+				screen.
+				You can save the duplicate records, the duplicate pairs and
+				also the unique records in
+				a datastore table of your choice. Or you
+				can create an excel file or a staging table.
 			</para>
 
 			<tip>
-				<para>It is now possible to feed the result directly to the merger, using the new data
-					streams feature. You can read more about linking them together in the documentation of
+				<para>
+					It is now possible to fed the result directly to the merger, using
+					the new data
+					streams feature. You can read more about linking them
+					together in the documentation of
 					<link linkend="merge_duplicates">merge duplicates</link>
 				</para>
 			</tip>
@@ -474,30 +525,48 @@
 			<para>In the Improve menu, in the
 				Deduplication submenu, there are two
 				components that are useful for
-				merging duplicates into a single record
+				merging duplicates into a single
+				record
 				- Merge duplicates (simple)
 				and Merge duplicates (advanced).
 				The simple version just picks one
 				record from the group of duplicates
 				while the advanced one enables
-				the	user to combine records, taking
+				the user to combine records, taking
 				some values from one record, some
 				from another. In this example we
 				will use the simple version.
 			</para>
 
 			<para>
-				Add "Merge duplicates (Simple)" transformer to your job, and configure the new component.
-				change the scope to <emphasis>"Duplicate Detection: Duplicate and unique
-				rows"</emphasis>. Now click "Select all", then disable the four synthetic columns
-				<emphasis>Record id</emphasis>,<emphasis>Group id</emphasis>,
-				<emphasis>Group size</emphasis> and <emphasis>Group score</emphasis>.
+				Add "Merge duplicates (Simple)" transformer to your job, and
+				configure the new component.
+				change the scope to
+				<emphasis>"Duplicate Detection: Duplicate and unique
+					rows"
+				</emphasis>
+				. Now click "Select all", then disable the four synthetic columns
+				<emphasis>Record id</emphasis>
+				,
+				<emphasis>Group id</emphasis>
+				,
+				<emphasis>Group size</emphasis>
+				and
+				<emphasis>Group score</emphasis>
+				.
 			</para>
 
 			<para>
-				Set the property <emphasis>Group id</emphasis> to the column <emphasis>Group id</emphasis>,
-				and the property <emphasis>Group count</emphasis> to the column
-				<emphasis>Group size</emphasis>.
+				Set the property
+				<emphasis>Group id</emphasis>
+				to the column
+				<emphasis>Group id</emphasis>
+				,
+				and the property
+				<emphasis>Group count</emphasis>
+				to the column
+				<emphasis>Group size</emphasis>
+				.
 			</para>
 
 			<mediaobject>
@@ -516,17 +585,22 @@
 				Merge duplicates (Simple) transformer will output all the input
 				columns as output + additional colums carrying metadata about the
 				record. One of them is "Merge status" that can have three possible
-				values: SURVIVOR, NON_SURVIVOR and UNIQUE.</para>
+				values: SURVIVOR, NON_SURVIVOR and UNIQUE.
+			</para>
 
 			<orderedlist>
 				<listitem>
-					<para>SURVIVOR records are records that has duplicates, but has been chosen as the
-						representative of their duplicate group, and should therefore "survive".
+					<para>SURVIVOR records are records that has duplicates, but has
+						been chosen as the
+						representative of their duplicate group, and
+						should therefore "survive".
 					</para>
 				</listitem>
 				<listitem>
-					<para>NON_SURVIVOR records are records that has duplicates, but where another
-						record has been chosen as the representative of the duplicate group. These records
+					<para>NON_SURVIVOR records are records that has duplicates, but
+						where another
+						record has been chosen as the representative of the
+						duplicate group. These records
 						should not be used.
 					</para>
 				</listitem>
@@ -537,8 +611,10 @@
 			</orderedlist>
 
 			<para>
-				Let's add an Equals filter to the job in order to write only these
-				SURVIVOR and UNIQUE records, to create a data set with has no duplicates.
+				Let's add an Equals filter to the job in order to write only
+				these
+				SURVIVOR and UNIQUE records, to create a data set with has no
+				duplicates.
 			</para>
 
 			<mediaobject>
@@ -554,9 +630,12 @@
 
 			<warning>
 				<para>
-					Unlike duplicate detection, "Merge duplicates" is a transformer, which
-					means that new columns are created with the result in them. Make sure that you only choose
-					the merged columns in your staging table.
+					Unlike duplicate detection, "Merge duplicates" is a
+					transformer, which
+					means that new columns are created with the
+					result in them. Make sure that you only choose
+					the merged columns in
+					your staging table.
 				</para>
 			</warning>
 
@@ -648,7 +727,8 @@
 		<para>This component provides Address Correction and Mail Suppression
 			services for Germany. Use it to check that the name and address data
 			you have about people is up to date and correct. The following
-			Mail Suppression checks currently exist:
+			Mail
+			Suppression checks currently exist:
 		</para>
 		<orderedlist>
 			<listitem>
@@ -742,6 +822,20 @@
 				</tgroup>
 			</table>
 		</section>
+		<section>
+			<subtitle>Link to... </subtitle>
+			<para>
+				The component produces an
+				<link linkend="">outputstream </link>
+				that can be fed into another component.
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="analyzer_reference_desuppression_outputstream.png"
+							format="PNG" scalefit="1" />
+					</imageobject>
+				</mediaobject>
+			</para>
+		</section>
 	</section>
 
 	<section id="UK_suppression">
@@ -790,8 +884,8 @@
 			</para>
 			<mediaobject>
 				<imageobject>
-					<imagedata fileref="analyzer_reference_uksuppression_report.jpg"
-						format="JPG" scalefit="1" />
+					<imagedata fileref="analyzer_reference_uksuppression_report.png"
+						format="PNG" scalefit="1" />
 				</imageobject>
 			</mediaobject>
 
@@ -881,6 +975,20 @@
 				</tgroup>
 			</table>
 		</section>
+		<section>
+			<subtitle>Link to... </subtitle>
+			<para>
+				The component produces an
+				<link linkend="">outputstream </link>
+				that can be fed into another component.
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="analyzer_reference_uksuppression_outputstream.png"
+							format="PNG" scalefit="1" />
+					</imageobject>
+				</mediaobject>
+			</para>
+		</section>
 	</section>
 
 	<section id="US_suppression">
@@ -895,7 +1003,8 @@
 		</title>
 		<para>This component provides CASS Certified(tm) Address Correction
 			and Mail Suppression
-			services for the United States of America. Use it to
+			services for the United States of America. Use it
+			to
 			check that
 			the name and address data you have about people is up to
 			date and
@@ -1048,8 +1157,22 @@
 				</tgroup>
 			</table>
 		</section>
+		<section>
+			<subtitle>Link to... </subtitle>
+			<para>
+				The component produces an
+				<link linkend="">outputstream </link>
+				that can be fed into another component.
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="analyzer_reference_ussuppression_outputstream.png"
+							format="PNG" scalefit="1" />
+					</imageobject>
+				</mediaobject>
+			</para>
+		</section>
 	</section>
-	
+
 	<section id="table_lookup_transformer">
 		<title>Table lookup</title>
 		<para>The table lookup transformer allows you to look up values in a
@@ -1061,8 +1184,8 @@
 		</para>
 		<mediaobject>
 			<imageobject>
-				<imagedata fileref="transformer_reference_table_lookup.jpg"
-					format="JPG" scalefit="1" />
+				<imagedata fileref="transformer_reference_table_lookup.png"
+					format="PNG" scalefit="1" />
 			</imageobject>
 		</mediaobject>
 		<para>To make the mapping you need to select the target datastore,

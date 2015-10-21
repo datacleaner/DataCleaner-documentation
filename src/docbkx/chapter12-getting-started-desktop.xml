@@ -20,8 +20,10 @@
 				(JRE), version 7 or higher.
 			</listitem>
 			<listitem>
-				A DataCleaner software license file. If you've requested a free
-				trial or purchased DataCleaner online, this file will have been sent
+				A DataCleaner software license file for professional editions. If
+				you've requested a free
+				trial or purchased DataCleaner online, this
+				file will have been sent
 				to your email address.
 			</listitem>
 		</orderedlist>
@@ -270,21 +272,21 @@
 			</imageobject>
 		</mediaobject>
 		<section>
-		<title>Filter requirement</title>
-		<para>To wire a filter you need to set up a dependency on either of
-			it's outcomes. All components have a button for selecting filter
-			outcomes in the top-right corners of their configuration dialogs.
-			Click this button to select a filter outcome to depend on. If you
-			have
-			multiple filters you can chain these simply by having dependent
-			outcomes of the individual filters.
-		</para>
+			<title>Filter requirement</title>
+			<para>To wire a filter you need to set up a dependency on either of
+				it's outcomes. All components have a button for selecting filter
+				outcomes in the top-right corners of their configuration dialogs.
+				Click this button to select a filter outcome to depend on. If you
+				have
+				multiple filters you can chain these simply by having dependent
+				outcomes of the individual filters.
+			</para>
 		</section>
 		<tip>
 			<para>
-				In the bottom part of the canvas, a help message is displayed
-				instructing what needs to be done in current moment to build a valid
-				job.
+				The canvas displays messages (in the bottom of the screen) which
+				contain instructions with the next steps that need to be performed
+				in other to build a valid job.
 			</para>
 		</tip>
 		<section id="wiring_components_output_data_streams">
@@ -302,8 +304,10 @@
 				records" and "Incomplete records".
 				<emphasis role="bold">Output data streams
 					behave
-					similarly to a source table, although such a table is created
-					dynamically by a component.
+					similarly to a
+					source table, although such a table is created
+					dynamically by a
+					component.
 				</emphasis>
 				This enables further processing
 				of such
@@ -332,7 +336,7 @@
 						format="PNG" scalefit="1" />
 				</imageobject>
 			</mediaobject>
-			<para>An example job using output data streams: 
+			<para>An example job using output data streams:
 			</para>
 			<mediaobject>
 				<imageobject>
