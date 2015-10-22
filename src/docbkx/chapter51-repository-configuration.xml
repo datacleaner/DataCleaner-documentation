@@ -110,29 +110,78 @@
 			otherwise the desktop application will not be allowed to launch by
 			most Java runtime configurations.
 		</para>
-		<para>
-			Signed JAR files can be
-			<link xl:href="http://datacleaner.org/downloads">downloaded separately</link>
-			and should be extracted into a directory of choice on the server.
-			Once extracted you need to configure the application with the
-			directory path. Find the file
-			<emphasis>WEB-INF/classes/context/repository-context.xml</emphasis>
-			within the deployed web archive folder. Remove or comment the
-			&lt;bean&gt;
-			element which initially looks like this:
-		</para>
-		<programlisting lang="xml">
-			&lt;bean&#160;name="launchArtifactProvider"&#160;lazy-init="true"
-			&#160;&#160;&#160;class="org.datacleaner.monitor.server.DevModeLaunchArtifactProvider"/&gt;
-		</programlisting>
-		<para>It needs to be replaced with a new &lt;bean&gt; element which
-			will look like this:
-		</para>
-		<programlisting lang="xml">
-			&lt;bean&#160;name="launchArtifactProvider"&#160;
-			&#160;&#160;&#160;&#160;lazy-init="true"&#160;class="org.datacleaner.monitor.server.FileFolderLaunchArtifactProvider"&gt;
-			&#160;&#160;&lt;constructor-arg&#160;type="java.io.File"&#160;value="/var/datacleaner/signed_jars"/&gt;
-			&lt;/bean&gt;</programlisting>
+		<section>
+			<title>Producing the signed JARs</title>
+			<para>
+				By default DataCleaner monitor will use a public set of DataCleaner JAR
+				files to launch the Java Web Start client (when clicking on "Analyze"
+				buttons on the 'Scheduling' and 'Datastores' pages).
+			</para>
+			<para>
+				If your server does not have internet access, you can provide your own
+				set of JAR files for the DataCleaner Java Web Start client. The procedure
+				involves signing these JAR files, which may depend on the availability of
+				a certificate. If no certificate is available, you can also self-sign the
+				JARs, but that will cause a warning to pop up before launching the client.
+			</para>
+			<para>
+				In-depth information about JAR file signing can be found on Oracle's website:
+				<link xl:href="http://docs.oracle.com/javase/tutorial/deployment/jar/signing.html">http://docs.oracle.com/javase/tutorial/deployment/jar/signing.html</link>
+			</para>
+			<para>
+				For the purposes of this installation, you will need to create a Java keystore
+				alias, optionally based upon a certificate. If this is new to you, and you just
+				want to have use simple self-signed JAR files, issue the following command:
+			</para>
+			<programlisting>
+				keytool -keystore "%JAVA_HOME%/jre/lib/security/cacerts" -genkey -alias my_alias
+			</programlisting>
+			<para>
+				You will be prompted for the keystore password, which is by default "changeit".
+			</para>
+			<para>
+				After running the command, it will eventually produce an alias in your keystore.
+			</para>
+			<para>
+				After installing DataCleaner, the installation folder will include either of
+				these executables, depending on operating system:
+			</para>
+			<programlisting>
+				sign-jar-files.cmd (on windows systems)
+				sign-jar-files.sh (on unix systems)
+			</programlisting>
+			<para>
+				Open the appropriate executable. It will have a top section like this (example from
+				.cmd file. The .sh file does not have the 'set' keyword):
+			</para>
+			<programlisting>
+				set ALIAS=my_alias
+				set KEYPASS=my_password
+				set SIGFILE=
+			</programlisting>
+			<para>Set the KEYPASS variable to the alias password.</para>
+			<para>Set the ALIAS variable to the alias name.</para>
+			<para>Optionally set the SIGFILE variable to the name of your signature.</para>
+			<para>
+				Run the sign-jar-files executable. A folder named signed_jars will be produced
+				in the installation directory.
+			</para>
+		</section>
+		
+		<section>
+			<title>Configuring DataCleaner monitor to use the signed JARs</title>
+			<para>
+				In the ${user.home}/.datacleaner/datacleaner-monitor.properties file you can
+				define the ‘jnlp.artifacts.location’ property, which should point to the directory
+				of your signed JAR files. This is the default definition:
+			</para>
+			<programlisting>
+				jnlp.artifacts.location=${user.home}/.datacleaner/jnlp-launch-artifacts
+			</programlisting>
+			<para>
+				Restart the DataCleaner monitor after configuring this property.
+			</para>
+		</section>
 	</section>
 
 	<section id="cluster_configuration">
