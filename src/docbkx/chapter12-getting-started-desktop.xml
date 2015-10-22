@@ -20,7 +20,7 @@
 				(JRE), version 7 or higher.
 			</listitem>
 			<listitem>
-				A DataCleaner software license file. If you've requested a free
+				A DataCleaner software license file for professional editions. If you've requested a free
 				trial or purchased DataCleaner online, this file will have been sent
 				to your email address.
 			</listitem>
@@ -358,10 +358,10 @@
 			</mediaobject>
 		</section>
 		<tip>
-			<para>
-				In the bottom part of the canvas, a help message is displayed
-				instructing what needs to be done in current moment to build a valid
-				job.
+			<para>				
+                 The canvas displays messages (in the bottom of the screen) which
+				contain instructions with the next steps that need to be performed
+				in other to build a valid job		
 			</para>
 		</tip>
 
