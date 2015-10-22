@@ -10,14 +10,14 @@
 	<groupId>org.eobjects.datacleaner</groupId>
 	<artifactId>DataCleaner-documentation</artifactId>
 	<name>DataCleaner documentation</name>
-	<version>4.5</version>
+	<version>4.5.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
 	<scm>
 		<url>https://github.com/datacleaner/DataCleaner-documentation</url>
 		<connection>scm:git:https://github.com/datacleaner/DataCleaner-documentation.git</connection>
 		<developerConnection>scm:git:https://github.com/datacleaner/DataCleaner-documentation.git</developerConnection>
-		<tag>DataCleaner-documentation-4.5</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<profiles>
