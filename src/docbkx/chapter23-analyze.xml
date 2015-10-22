@@ -343,7 +343,7 @@
 							integrity checking by caching previous lookup results. Whether or
 							not this will gain performance ultimately depends on the amount
 							of repetition in the keys to be checked. If all foreign key
-							values are more or less unique, it should definately be turned
+							values are more or less unique, it should definitely be turned
 							off. But if there is a fair amount of duplication in the foreign
 							keys (e.g. orderlines referring to the same products or
 							customers), then it makes the lookups faster.

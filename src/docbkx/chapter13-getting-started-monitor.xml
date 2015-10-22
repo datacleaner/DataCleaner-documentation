@@ -249,9 +249,8 @@
 					scalefit="1" />
 			</imageobject>
 		</mediaobject>
-		<para>Note that the content of the dialog is highly dependent on the
-			contents of the selected job, so the screenshot above will not
-			necesarily resemble the options available to you.
+		<para>Note that the contents of the dialog are highly dependent on the selected job,
+			so the screenshot above will not necessarily resemble the options available to you.
 		</para>
 		<para>There are four different types of metrics in DataCleaner
 			monitor, and they may or may not be exposed through your job:
