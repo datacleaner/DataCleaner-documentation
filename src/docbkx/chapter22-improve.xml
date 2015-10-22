@@ -742,6 +742,20 @@
 				</tgroup>
 			</table>
 		</section>
+		<section>
+			<subtitle>Link to... </subtitle>
+			<para>
+				The component produces an
+				<link linkend="">outputstream </link>
+				that can be fed into another component.
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="analyzer_reference_desuppression_outputstream.png"
+							format="PNG" scalefit="1" />
+					</imageobject>
+				</mediaobject>
+		</para>
+		</section>
 	</section>
 
 	<section id="UK_suppression">
@@ -790,8 +804,8 @@
 			</para>
 			<mediaobject>
 				<imageobject>
-					<imagedata fileref="analyzer_reference_uksuppression_report.jpg"
-						format="JPG" scalefit="1" />
+					<imagedata fileref="analyzer_reference_uksuppression_report.png"
+						format="PNG" scalefit="1" />
 				</imageobject>
 			</mediaobject>
 
@@ -880,6 +894,20 @@
 					</tbody>
 				</tgroup>
 			</table>
+		</section>
+		<section>
+			<subtitle>Link to... </subtitle>
+	    	<para>
+				The component produces an
+				<link linkend="">outputstream </link>
+				that can be fed into another component.
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="analyzer_reference_uksuppression_outputstream.png"
+							format="PNG" scalefit="1" />
+					</imageobject>
+				</mediaobject>
+			</para>
 		</section>
 	</section>
 
@@ -1048,6 +1076,20 @@
 				</tgroup>
 			</table>
 		</section>
+		<section>
+			<subtitle>Link to... </subtitle>
+			<para>
+				The component produces an
+				<link linkend="">outputstream </link>
+				that can be fed into another component.
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="analyzer_reference_ussuppression_outputstream.png"
+							format="PNG" scalefit="1" />
+					</imageobject>
+				</mediaobject>
+			</para>
+		</section>
 	</section>
 	
 	<section id="table_lookup_transformer">
@@ -1061,8 +1103,8 @@
 		</para>
 		<mediaobject>
 			<imageobject>
-				<imagedata fileref="transformer_reference_table_lookup.jpg"
-					format="JPG" scalefit="1" />
+				<imagedata fileref="transformer_reference_table_lookup.png"
+					format="PNG" scalefit="1" />
 			</imageobject>
 		</mediaobject>
 		<para>To make the mapping you need to select the target datastore,
