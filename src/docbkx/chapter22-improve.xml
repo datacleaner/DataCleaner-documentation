@@ -1172,31 +1172,4 @@
 			</listitem>
 		</orderedlist>
 	</section>
-
-	<section id="easydq_transformers">
-		<title>Name and Address correction</title>
-		<para>
-			These functions are provided as clients to
-			<link xl:href="http://www.easydq.com">EasyDQ.com</link>
-			. EasyDQ is an on-demand service for data quality functions.
-			DataCleaner provides access to these EasyDQ services,
-			but a separate
-			account is needed in order
-			to take them to any use.
-		</para>
-		<para>
-			Please refer to the
-			<link xl:href="http://help.easydq.com/datacleaner">EasyDQ for DataCleaner documentation</link>
-			for detailed information about the services provided through
-			EasyDQ.
-		</para>
-
-		<mediaobject>
-			<imageobject>
-				<imagedata fileref="transformer_reference_table_easydq_documentation.jpg"
-					format="JPG" scalefit="1" />
-			</imageobject>
-		</mediaobject>
-
-	</section>
 </chapter>

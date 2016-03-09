@@ -79,16 +79,17 @@
 
 	<part>
 		<partinfo>
-			<title>Invoking DataCleaner jobs from the command-line</title>
+			<title>Invoking DataCleaner jobs</title>
 		</partinfo>
 		<xi:include href="chapter71-command-line-interface.xml" />
+		<xi:include href="chapter72-hadoop-interface.xml" />
 	</part>
 	
 	<part>
 		<partinfo>
 			<title>Third party integrations</title>
 		</partinfo>
-		<xi:include href="chapter72-pentaho-integration.xml" />
+		<xi:include href="chapter76-pentaho-integration.xml" />
 	</part>
 
 	<part>

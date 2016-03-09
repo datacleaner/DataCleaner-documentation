@@ -1,5 +1,5 @@
-/*Import 'Ubuntu' font from Google*/
-@import url("http://fonts.googleapis.com/css?family=Ubuntu:400,700");
+/*Import 'Muli' font from Google*/
+@import url("http://fonts.googleapis.com/css?family=Muli:300,400");
 
 /*reset all the values*/
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,button,table,caption,tbody,tfoot,thead,tr,th,td
@@ -10,7 +10,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	outline: 0;
 	font-size: 16px;
 	background: transparent;
-	font-family: Ubuntu, Arial, sans-serif;
+	font-family: 'Muli', Arial, sans-serif;
 }
 
 html,body {
@@ -139,10 +139,10 @@ body>div {
 }
 
 .toc .chapter {
-	border: #9babbf dotted 1px;
+	border: #16c2f4 solid 1px;
 	padding: 5px 25px;
 	display: block;
-	background-color: #adc6e7;
+	background-color: #16c2f4;
 	margin-bottom: 1px;
 }
 
@@ -178,11 +178,11 @@ body>div {
 }
 
 .titlepage .title {
-	color: #5594dd;
+	color: #16c2f4;
 }
 
 .releaseinfo {
-	color: #ff6600;
+	color: #ffa800;
 }
 
 .copyright,.legalnotice {
@@ -203,16 +203,13 @@ body>div {
 .abstract {
 	margin: 10px;
 	padding: 12px;
-	background-color: #eee;
-	border: 1px solid silver;
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	behavior: url("border-radius.htc");
+	background-color: #f0f0f0;
+	border: 1px solid #ddd;
+	border-radius: 2px;
 }
 
 .abstract .title {
-	color: #ff6600;
+	color: #ffa800;
 	padding: 0px;
 	margin: 0px;
 }
@@ -223,12 +220,9 @@ pre.programlisting {
 	font-size: 0.8em;
 	margin: 10px;
 	padding: 12px;
-	background-color: #eee;
-	border: 1px solid silver;
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	behavior: url("border-radius.htc");
+	background-color: #f0f0f0;
+	border: 1px solid #ddd;
+	border-radius: 2px;
 	white-space: pre-line;
 }
 
@@ -243,9 +237,6 @@ pre.programlisting {
 	padding: 12px;
 	padding-left: 50px;
 	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	behavior: url("border-radius.htc");
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
@@ -257,12 +248,12 @@ pre.programlisting {
 }
 
 .tip {
-	background-color: #adc6e7;
+	background-color: #8acfeb;
 	background-image: url("info.png");
 }
 
 .warning {
-	background-color: #e6e2b8;
+	background-color: #f0ca93;
 	background-image: url("warning.png");
 }
 
