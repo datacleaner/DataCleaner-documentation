@@ -80,7 +80,8 @@
 			<title>Upload configuration file to HDFS</title>
 			
 			<para>
-				DataCleaner on Hadoop needs a configuration file (conf.xml).
+				DataCleaner on Hadoop needs a regular
+				<link linkend="chapter_configuration_file">DataCleaner configuration file</link> (conf.xml).
 				It's best to upload this to the hadoop distributed file system (HDFS).
 				We recommend putting this file into the path
 				<emphasis>/datacleaner/conf.xml</emphasis>
@@ -189,11 +190,128 @@
 			
 			<para>If your desktop application has access to the namenode then you can build this job in the desktop application, save it and run it on spark. There is nothing particular about this job that makes it runnable on spark, except that the file references involved are resolvable from the hadoop nodes.</para>
 		</section>
+		
+		<section>
+			<title>Upload executables to HDFS</title>
+			
+			<para>In the installation of DataCleaner you will find the file 'DataCleaner-env-spark-[version].jar'.</para>
+
+			<para>This jar file contains the core of what is needed to run DataCleaner with Apache Spark on Hadoop. It contains also the standard components of DataCleaner.</para>
+
+			<para>Upload this jar file to HDFS in the folder <emphasis>/datacleaner/lib</emphasis>.</para>
+			<para>Upload any extension jar files that you need (for instance Groovy-DataCleaner.jar) to that same folder.</para>
+
+		</section>
 	</section>
 
 	<section id="hadoop_launch">
 		<title>Launching DataCleaner jobs using Spark</title>
-		<para>TODO</para>
+
+		<para>Go to the Spark installation path to run the job. Use the following command line template:</para>
+
+		<programlisting>
+			bin/spark-submit --class org.datacleaner.spark.Main --master yarn-cluster /path/to/DataCleaner-env-spark-x.x.x.jar
+			/path/to/conf.xml /path/to/job_file.analysis.xml ([/path/to/custom_properties.properties])
+		</programlisting>
+		
+		<para>
+			A convenient way to organize it is in a shell script like the below, where every individual argument can be edited line by line:
+		</para>
+		
+		<programlisting>
+			#!/bin/sh
+			SPARK_HOME=/path/to/apache-spark
+			SPARK_MASTER=yarn-cluster
+			DC_PRIMARY_JAR=/path/to/DataCleaner-env-spark.jar
+			DC_EXTENSION_JARS=/path/to/extension1.jar,/path/to/extension2.jar
+			DC_CONF_FILE=hdfs:///path/to/conf.xml
+			DC_JOB_FILE=hdfs:///path/to/job_file.analysis.xml
+			DC_PROPS=hdfs:///path/to/custom_properties.properties
+			
+			DC_COMMAND="$SPARK_HOME/bin/spark-submit"
+			DC_COMMAND="$DC_COMMAND --class org.datacleaner.spark.Main"
+			DC_COMMAND="$DC_COMMAND --master $SPARK_MASTER"
+			
+			echo "Using DataCleaner executable: $DC_PRIMARY_JAR"
+			if [ "$DC_EXTENSION_JARS" != "" ]; then
+			&#160;&#160;echo "Adding extensions: $DC_EXTENSION_JARS"
+			&#160;&#160;DC_COMMAND="$DC_COMMAND --jars $DC_EXTENSION_JARS"
+			fi
+
+			DC_COMMAND="$DC_COMMAND $DC_PRIMARY_JAR $DC_CONF_FILE $DC_JOB_FILE $DC_PROPS"
+			
+			echo "Submitting DataCleaner job $DC_JOB_FILE to Spark $SPARK_MASTER"
+			$DC_COMMAND
+		</programlisting>
+
+		<para>The example makes it clear that there are a few more parameters to invoking the job. Let's go through them:</para>
+		
+		<orderedlist>
+			<listitem>
+				<para>
+					<emphasis>SPARK_MASTER</emphasis> represents the location of the Driver program, see the section on <link linkend="hadoop_deployment">Hadoop deployment overview</link>.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<emphasis>DC_EXTENSION_JARS</emphasis> allows you to add additional JAR files with extensions to DataCleaner.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<emphasis>DC_PROPS</emphasis> is maybe the most important one. It allows you to add a .properties file which can be used for a number of things:
+				</para>
+				<orderedlist>
+					<listitem>
+						<para>
+							Special property
+							<emphasis>datacleaner.result.hdfs.path</emphasis>
+							which allows you to specify the filename (on HDFS) where the analysis result (.analysis.result.dat) file is stored. It defaults to
+							<emphasis>/datacleaner/results/[job name]-[timestamp].analysis.result.dat</emphasis>
+						</para>
+					</listitem>
+					<listitem>
+						<para>
+							Special property
+							<emphasis>datacleaner.result.hdfs.enabled</emphasis>
+							which can be either 'true' (default) or 'false'. Setting this property to false will disable result gathering completely from the
+							DataCleaner job, which gives a significant increase in performance, but no analyzer results are gathered or written. This is thus only
+							relevant for ETL-style jobs where the purpose of the job is to create/insert/update/delete from other datastores or files.
+						</para>
+					</listitem>
+					<listitem>
+						<para>Properties to <link linkend="cli_overriding_configuration_elements">override configuration defaults</link>.</para>
+					</listitem>
+					<listitem>
+						<para>Properties to <link linkend="section_parameterizable_jobs">set job variables/parameters</link>.</para>
+					</listitem>
+				</orderedlist>
+			</listitem>
+		</orderedlist>
+	</section>
+	
+	<section id="hadoop_limitations">
+		<title>Limitations of the Hadoop interface</title>
+
+		<para>While the Hadoop interface for DataCleaner allows distributed running of DataCleaner jobs on the Hadoop platform, there are a few limitations:</para>
+	
+		<orderedlist>
+			<listitem>
+				<para><emphasis>Datastore support</emphasis></para>
+				<para>Currently we support a limited set of source datastores from HDFS. CSV files are the primary source here.
+				We do require that files on HDFS are UTF8 encoded and that only single-line values occur.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis>Non-distributable components</emphasis></para>
+				<para>A few components are by nature not distributable. If your job depends on these, DataCleaner will resort to
+				executing the job on a single Spark executor, which may have a significant performance impact.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis>Hadoop Distributions without Namenode</emphasis></para>
+				<para>Some Hadoop Distributions (such as MapR) have replaced the concept of Namenode with something else.
+				This is mostly fine, but it does mean that file paths with username+port of Namenodes are obviously not working.</para>
+			</listitem>
+		</orderedlist>
 	</section>
 
 </chapter>
