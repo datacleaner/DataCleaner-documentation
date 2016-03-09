@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter id="hadoop_interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://www.oasis-open.org/docbook/4.5"
+<chapter id="hadoop_interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oasis-open.org/docbook/4.5"
 	xsi:schemaLocation="http://www.oasis-open.org/docbook/4.5 http://www.oasis-open.org/docbook/xsd/4.5/docbook.xsd">
 
 	<title>Apache Hadoop and Spark interface</title>
@@ -8,13 +7,192 @@
 	<chapterinfo>
 		<abstract>
 			<para>
+				DataCleaner allows big data processing on the Apache Hadoop platform.
+				In this chapter we will guide you through the process of setting up
+				and running your first DataCleaner job on Hadoop.
 			</para>
 		</abstract>
 	</chapterinfo>
-	
+
 
 	<section id="hadoop_deployment">
 		<title>Hadoop deployment overview</title>
+		<para>Apache Hadoop is a distributed system with a number of key components of which a few are important to understand:</para>
+		<orderedlist>
+			<listitem>
+				<para>
+					<emphasis>YARN</emphasis>, which is often referred to as the 'operating system' of Hadoop. YARN is the managing entity which assigns resources to running a specific job or task.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<emphasis>HDFS</emphasis>, which is the Hadoop Distributed File System. This is the location where data is located, but also the place where executables are often shared so that a distributed process can be picked up on many nodes in the cluster.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<emphasis>Namenode</emphasis>, is a dedicated node in the cluster which deals with HDFS and distribution of data to other nodes, so-called datanodes.
+				</para>
+			</listitem>
+		</orderedlist>
+		<para>In addition, the DataCleaner Hadoop support is built using Apache Spark, which is a data processing framework that works with Hadoop as well as other clustering technologies. A few important concepts of Apache Spark are useful to understand for DataCleaner's deployment on Hadoop:</para>
+		<orderedlist>
+			<listitem>
+				<para>
+					<emphasis>Cluster manager</emphasis>, which is the component that negotiates with the cluster - for instance Hadoop/YARN. From the perspective of Apache Spark, YARN is a <emphasis>cluster manager</emphasis>.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<emphasis>Driver program</emphasis>, which is the program that directs the cluster manager and tells it what to do. In Apache Spark for Hadoop you have two choices: To run the Driver program as an external process ('yarn-client') or to run the Driver program as a process inside YARN itself ('yarn-cluster').
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<emphasis>Executor</emphasis>, which is a node in a Spark cluster that executes a partition (chunk) of a job.
+				</para>
+			</listitem>
+		</orderedlist>
+		<para>In the top-part of the below image you see Hadoop/YARN as well as Apache Spark, and how they are componentized.</para>
+		<inlinemediaobject>
+			<imageobject>
+				<imagedata fileref="hadoop_deployment_overview.png" format="PNG" />
+			</imageobject>
+		</inlinemediaobject>
+		<para>In the lower part of the image you see DataCleaner's directory structure on HDFS. As you can see, the usual configuration and job files are used, but placed on HDFS. A special JAR file is placed on HDFS to act as executable for the Apache Spark executors.</para>
+	</section>
+
+	<section id="hadoop_spark_setup">
+		<title>Setting up Spark and DataCleaner environment</title>
+		<para>
+			In order to work, Apache Spark requires either of environmental variables
+			<emphasis>HADOOP_CONF_DIR</emphasis>
+			or
+			<emphasis>YARN_CONF_DIR</emphasis>
+			to a directory containing your Hadoop/Yarn configuration files such as
+			<emphasis>core-site.xml</emphasis>
+			,
+			<emphasis>yarn-site.xml</emphasis>
+			etc.
+		</para>
+		
+		<section>
+			<title>Upload configuration file to HDFS</title>
+			
+			<para>
+				DataCleaner on Hadoop needs a configuration file (conf.xml).
+				It's best to upload this to the hadoop distributed file system (HDFS).
+				We recommend putting this file into the path
+				<emphasis>/datacleaner/conf.xml</emphasis>
+				.
+	
+				Simple example of a configuration file (conf.xml) with a CSV datastore based on a HDFS file or directory:
+			</para>
+			
+			<programlisting>
+				&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+				&lt;configuration xmlns="http://eobjects.org/analyzerbeans/configuration/1.0"&gt;
+				&#160;&lt;datastore-catalog&gt;
+				&#160;&#160;&lt;csv-datastore name="mydata"&gt;
+				&#160;&#160;&#160;&lt;filename&gt;hdfs://bigdatavm:9000/path/to/data.txt&lt;/filename&gt;
+				&#160;&#160;&#160;&lt;multiline-values&gt;false&lt;/multiline-values&gt;
+				&#160;&#160;&lt;/csv-datastore&gt;
+				&#160;&lt;/datastore-catalog&gt;
+				&lt;/configuration&gt;
+			</programlisting>
+			
+			<para>
+				Notice the filename which is here specified with scheme, hostname and port:
+			</para>
+			
+			<programlisting>
+				&lt;filename&gt;hdfs://bigdatavm:9000/path/to/data.txt&lt;/filename&gt;
+			</programlisting>
+			
+			<para>
+				This here refers to the Hadoop Namenode's hostname and port.
+			</para>
+			<para>
+				It can also be specified more implicityly, without the username and port:
+			</para>
+			
+			<programlisting>
+				&lt;filename&gt;hdfs:///path/to/data.txt&lt;/filename&gt;
+			</programlisting>
+			
+			<para>
+				Or even without scheme:
+			</para>
+			
+			<programlisting>
+				&lt;filename&gt;/path/to/data.txt&lt;/filename&gt;
+			</programlisting>
+		</section>
+
+		<section>
+			<title>Upload job file to HDFS</title>
+			
+			<para>
+				Upload the DataCleaner job you wish to run (a DataCleaner .analysis.xml job file) to HDFS.
+				We recommend putting this file into a path such as <emphasis>/datacleaner/jobs/myjob.xml</emphasis>.
+				The jobs can be built using the DataCleaner desktop UI, but do ensure that they map well to the configuration file also on HDFS.
+			</para>
+			<para>
+				Example job file based on the above datastore:
+			</para>
+			<programlisting>
+				&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+				&lt;job xmlns="http://eobjects.org/analyzerbeans/job/1.0"&gt;
+				&#160;&lt;source&gt;
+				&#160;&#160;&lt;data-context ref="mydata" /&gt;
+				&#160;&#160;&lt;columns&gt;
+				&#160;&#160;&#160;&lt;column id="col_country" path="country" /&gt;
+				&#160;&#160;&#160;&lt;column id="col_company" path="company" /&gt;
+				&#160;&#160;&lt;/columns&gt;
+				&#160;&lt;/source&gt;
+				&#160;&lt;analysis&gt;
+				&#160;&#160;&lt;analyzer&gt;
+				&#160;&#160;&#160;&lt;descriptor ref="Create CSV file"/&gt;
+				&#160;&#160;&#160;&lt;properties&gt;
+				&#160;&#160;&#160;&#160;&lt;property name="File" value="hdfs:///path/to/output.csv"/&gt;
+				&#160;&#160;&#160;&#160;&lt;property name="Separator char" value="&amp;#44;"/&gt;
+				&#160;&#160;&#160;&#160;&lt;property name="Quote char" value="&amp;quot;"/&gt;
+				&#160;&#160;&#160;&#160;&lt;property name="Escape char" value="\"/&gt;
+				&#160;&#160;&#160;&#160;&lt;property name="Include header" value="true"/&gt;
+				&#160;&#160;&#160;&#160;&lt;property name="Encoding" value="UTF-8"/&gt;
+				&#160;&#160;&#160;&#160;&lt;property name="Fields" value="[COUNTRY,CUSTOMERNUMBER]"/&gt;
+				&#160;&#160;&#160;&#160;&lt;property name="Overwrite file if exists" value="true"/&gt;
+				&#160;&#160;&#160;&lt;/properties&gt;
+				&#160;&#160;&#160;&lt;input ref="col_country" name="Columns"/&gt;
+				&#160;&#160;&#160;&lt;input ref="col_company" name="Columns"/&gt;
+				&#160;&#160;&#160;&lt;/analyzer&gt;
+				&#160;&lt;/analysis&gt;
+				&lt;/job&gt;
+			</programlisting>
+			
+			<para>This particular job is very simplistic - it just copies data from A to B. Notes about the job file contents:</para>
+			
+			<orderedlist>
+				<listitem>
+					<para>
+						The job is referring to <emphasis>mydata</emphasis> which was the name of the CSV datastore
+						defined in the configuration file.
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						There is another HDFS file reference used in the "File" property.
+						The filename format is the same as in the configuration file.
+					</para>
+				</listitem>
+			</orderedlist>
+			
+			<para>If your desktop application has access to the namenode then you can build this job in the desktop application, save it and run it on spark. There is nothing particular about this job that makes it runnable on spark, except that the file references involved are resolvable from the hadoop nodes.</para>
+		</section>
+	</section>
+
+	<section id="hadoop_launch">
+		<title>Launching DataCleaner jobs using Spark</title>
 		<para>TODO</para>
 	</section>
 
