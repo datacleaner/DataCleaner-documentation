@@ -91,7 +91,7 @@
 						<executions>
 							<execution>
 								<!-- HTML (multi page) generation -->
-								<id>reference-html-multi</id>
+								<id>default-cli</id>
 								<goals>
 									<goal>generate-html</goal>
 								</goals>
