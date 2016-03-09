@@ -96,6 +96,27 @@
 			datastore.
 		</para>
 	</section>
+	
+	<section id="what_is_data_wrangling">
+		<title>What is data wrangling?</title>
+		<para>
+			From <link linkend="https://en.wikipedia.org/wiki/Data_wrangling">Wikipedia</link>, we get a
+			good introductory explanation of the term 'Data wrangling':
+		</para>
+		<tip>
+			<para>
+				Data munging or data wrangling is loosely the process of manually converting or mapping data
+				from one "raw" form into another format that allows for more convenient consumption of the data
+				with the help of semi-automated tools. This may include further munging, data visualization,
+				data aggregation, training a statistical model, as well as many other potential uses.
+			</para>
+		</tip>
+		<para>
+			As can be seen, it's often important to do changes to data in order to analyze it. That's why DataCleaner
+			bundles a lot of transformational and improvement features which allow the user to not only profile data,
+			but also to reshape it into a form that is fitting.
+		</para>
+	</section>
 
 	<section id="what_is_datastore">
 		<title>What is a datastore?</title>
