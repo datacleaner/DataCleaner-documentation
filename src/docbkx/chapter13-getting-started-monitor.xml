@@ -20,7 +20,7 @@
 		</para>
 		<para>
 			To install the monitoring web application,
-			<link xl:href="http://datacleaner.org/downloads">download</link>
+			<link xl:href="https://datacleaner.org/downloads">download</link>
 			the Web Archive (.war) distribution of DataCleaner. Install the .war
 			file in your container. If you're using Apache Tomcat, this is done
 			by copying the .war file to the "webapps" folder within your tomcat

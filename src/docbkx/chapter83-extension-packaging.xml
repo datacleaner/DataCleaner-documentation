@@ -89,7 +89,7 @@
 			&#160;&#160;&lt;description&gt;This&#160;is&#160;an&#160;example&#160;extension.&#160;I&#160;should&#160;put&#160;a&#160;short&#160;description&#160;here.&lt;/description&gt;
 			&#160;&#160;&lt;icon&gt;path/to/extension/ExtensionIcon.png&lt;/icon&gt;
 			&#160;&#160;&lt;author&gt;John&#160;Doe&lt;/author&gt;
-			&#160;&#160;&lt;url&gt;http://datacleaner.org/extensions&lt;/url&gt;
+			&#160;&#160;&lt;url&gt;https://datacleaner.org/extensions&lt;/url&gt;
 			&#160;&#160;&lt;version&gt;1.0&lt;/version&gt;
 			&lt;/extension&gt;
 		</programlisting>
