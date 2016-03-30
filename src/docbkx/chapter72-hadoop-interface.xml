@@ -194,11 +194,12 @@
 		<section>
 			<title>Upload executables to HDFS</title>
 			
-			<para>In the installation of DataCleaner you will find the file 'DataCleaner-env-spark-[version].jar'.</para>
+			<para>In the installation of DataCleaner you will find the file 'DataCleaner-spark.jar'.</para>
 
 			<para>This jar file contains the core of what is needed to run DataCleaner with Apache Spark on Hadoop. It contains also the standard components of DataCleaner.</para>
 
 			<para>Upload this jar file to HDFS in the folder <emphasis>/datacleaner/lib</emphasis>.</para>
+			<para>Upload your DataCleaner license file to <emphasis>/datacleaner/hi_datacleaner.lic</emphasis>.</para>
 			<para>Upload any extension jar files that you need (for instance Groovy-DataCleaner.jar) to that same folder.</para>
 
 		</section>
@@ -210,7 +211,7 @@
 		<para>Go to the Spark installation path to run the job. Use the following command line template:</para>
 
 		<programlisting>
-			bin/spark-submit --class org.datacleaner.spark.Main --master yarn-cluster /path/to/DataCleaner-env-spark-x.x.x.jar
+			bin/spark-submit --class org.datacleaner.spark.Main --master yarn-cluster /path/to/DataCleaner-spark.jar
 			/path/to/conf.xml /path/to/job_file.analysis.xml ([/path/to/custom_properties.properties])
 		</programlisting>
 		
@@ -222,7 +223,7 @@
 			#!/bin/sh
 			SPARK_HOME=/path/to/apache-spark
 			SPARK_MASTER=yarn-cluster
-			DC_PRIMARY_JAR=/path/to/DataCleaner-env-spark.jar
+			DC_PRIMARY_JAR=/path/to/DataCleaner-spark.jar
 			DC_EXTENSION_JARS=/path/to/extension1.jar,/path/to/extension2.jar
 			DC_CONF_FILE=hdfs:///path/to/conf.xml
 			DC_JOB_FILE=hdfs:///path/to/job_file.analysis.xml
