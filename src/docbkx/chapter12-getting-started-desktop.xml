@@ -97,7 +97,7 @@
 					mkdir .datacleaner
 				</blockquote>
 			</listitem>
-            <listitem>
+			<listitem>
 				<para>
 					<emphasis>
 						Ran out of Heap Memory
@@ -121,6 +121,7 @@
 					Eg. -Xms1g (minimum size of the heap is 1 GB)
 				</para>
 			</listitem>
+
 		</orderedlist>
 
 	</section>
