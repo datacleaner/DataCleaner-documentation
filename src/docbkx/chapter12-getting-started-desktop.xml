@@ -20,8 +20,10 @@
 				(JRE), version 7 or higher.
 			</listitem>
 			<listitem>
-				A DataCleaner software license file for professional editions. If you've requested a free
-				trial or purchased DataCleaner online, this file will have been sent
+				A DataCleaner software license file for professional editions. If
+				you've requested a free
+				trial or purchased DataCleaner online, this
+				file will have been sent
 				to your email address.
 			</listitem>
 		</orderedlist>
@@ -97,7 +99,30 @@
 					mkdir .datacleaner
 				</blockquote>
 			</listitem>
-
+			<listitem>
+				<para>
+					<emphasis>
+						Ran out of Heap Memory
+					</emphasis>
+				</para>
+				<para>
+					In the DataCleaner installation folder there is a file called
+					'DataCleaner.l4j', respectively 'DataCleaner-console.l4j'. In that
+					file can be added any option parameter
+					for Java.
+					In order to increase Java Heap Memory you can use the following
+					parameters:
+					<orderedlist>
+					<listitem>
+						Xms - the minimum size of the heap
+					</listitem>
+					<listitem>
+						Xmx - the maximum size of the heap
+					</listitem>
+					</orderedlist>
+					Eg. -Xms1g (minimum size of the heap is 1 GB)
+				</para>
+			</listitem>
 		</orderedlist>
 
 	</section>
@@ -228,9 +253,11 @@
 		<para>
 			Transformers and filters are added to your job using the "Transform"
 			and "Improve"
-			menus. The menus are available in component library on the left
+			menus. The menus are available in component library on
+			the left
 			or by right-clicking on an empty space in the canvas.
-			Please refer to
+			Please
+			refer to
 			the reference chapter
 			<link linkend="transformations">Transformations</link>
 			for more
@@ -277,15 +304,20 @@
 				Click this button to select a filter outcome to depend on.
 			</para>
 
-			<para>If you have multiple filters you can chain these simply by having dependent
-				outcomes of the individual filters. This will require <emphasis>all</emphasis> filter requirements in
-				the chain to be met, for a record to be passed to the component (AND logic).
+			<para>
+				If you have multiple filters you can chain these simply by having
+				dependent
+				outcomes of the individual filters. This will require
+				<emphasis>all</emphasis>
+				filter requirements in
+				the chain to be met, for a record to be passed
+				to the component (AND logic).
 			</para>
 
 			<mediaobject>
 				<imageobject>
-					<imagedata fileref="filter_chain.png"
-							   format="PNG" scalefit="1" />
+					<imagedata fileref="filter_chain.png" format="PNG"
+						scalefit="1" />
 				</imageobject>
 				<caption>
 					<para>Chained filters</para>
@@ -293,15 +325,19 @@
 			</mediaobject>
 
 			<para>
-				Using "Link to...", it is also possible to wire several filters to a component
-				in a kind of diamond shape. In that case, if <emphasis>any</emphasis> of the the filter requirements
-				are met, the record will be passed to the component (OR logic).
+				Using "Link to...", it is also possible to wire several filters to a
+				component
+				in a kind of diamond shape. In that case, if
+				<emphasis>any</emphasis>
+				of the the filter requirements
+				are met, the record will be passed to
+				the component (OR logic).
 			</para>
 
 			<mediaobject>
 				<imageobject>
-					<imagedata fileref="filter_diamond.png"
-							   format="PNG" scalefit="1" />
+					<imagedata fileref="filter_diamond.png" format="PNG"
+						scalefit="1" />
 				</imageobject>
 				<caption>
 					<para>"Diamond" filters</para>
@@ -321,9 +357,12 @@
 				Additionally, it produces two output data streams -
 				"Complete
 				records" and "Incomplete records".
-				Output data streams behave similarly to a source table, although such
-				a table is created dynamically by a component.
-				This enables further processing of such output.
+				Output data streams
+				behave similarly to a source table, although such
+				a table is created
+				dynamically by a component.
+				This enables further processing of such
+				output.
 			</para>
 			<para>Components producing output data streams have additional "Link
 				to..." position in the right-click menu to wire the output with
@@ -348,7 +387,7 @@
 						format="PNG" scalefit="1" />
 				</imageobject>
 			</mediaobject>
-			<para>An example job using output data streams: 
+			<para>An example job using output data streams:
 			</para>
 			<mediaobject>
 				<imageobject>
@@ -358,10 +397,12 @@
 			</mediaobject>
 		</section>
 		<tip>
-			<para>				
-                 The canvas displays messages (in the bottom of the screen) which
-				contain instructions with the next steps that need to be performed
-				in other to build a valid job.		
+			<para>
+				The canvas displays messages (in the bottom of the screen)
+				which
+				contain instructions with the next steps that need to be
+				performed
+				in other to build a valid job.
 			</para>
 		</tip>
 
@@ -409,7 +450,8 @@
 		<para>You can save your jobs in order to reuse them at a later time.
 			Saving a job is simple: just click the "Save" button
 			in the top
-			panel of the window.
+			panel
+			of the window.
 		</para>
 		<para>Analysis jobs are saved in files with the ".analysis.xml"
 			extension. These files are XML files that are readable and editable
