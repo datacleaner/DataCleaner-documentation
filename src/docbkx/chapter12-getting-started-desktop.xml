@@ -97,7 +97,30 @@
 					mkdir .datacleaner
 				</blockquote>
 			</listitem>
-
+            <listitem>
+				<para>
+					<emphasis>
+						Ran out of Heap Memory
+					</emphasis>
+				</para>
+				<para>
+					In the DataCleaner installation folder there is a file called
+					'DataCleaner.l4j', respectively 'DataCleaner-console.l4j'. In that 
+					file can be added any option parameter
+					for Java.
+					In order to increase Java Heap Memory you can use the following
+					parameters:
+					<orderedlist>
+					<listitem>
+						Xms - the minimum size of the heap
+					</listitem>
+					<listitem>
+						Xmx - the maximum size of the heap
+					</listitem>
+					</orderedlist>
+					Eg. -Xms1g (minimum size of the heap is 1 GB)
+				</para>
+			</listitem>
 		</orderedlist>
 
 	</section>
