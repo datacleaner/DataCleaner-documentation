@@ -41,7 +41,8 @@
 			<title>Creating a resources folder on Windows</title>
 			<para>
 				DataCleaner monitor uses a special resources folder. Typically it is created automatically during
-				installation as<emphasis>C:\Windows\Users\USER_NAME\.datacleaner</emphasis>. However, when using
+				installation. In an English Windows 7 this would probably be 
+				<emphasis>C:\Users\YOUR_USER_NAME\.datacleaner</emphasis>. However, when using
 				Apache Tomcat and its system service then this resources folder needs to be created manually as
 				<emphasis>C:\Windows\System32\config\systemprofile\.datacleaner</emphasis>. If you encounter any
 				problems while using the system service, make sure the resource folder is available.
