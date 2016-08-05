@@ -50,8 +50,8 @@
 		<section>
 			<title>Manual creation of Windows systemprofile resource folder</title>
 			<para>
-				Default Windows explorer does not allow you to create a folder starting with a dot ('.')
-				so use another file manager or command prompt: 
+				Windows Explorer does not allow you to create a folder starting with a dot ('.')
+				so use another file manager or command prompt (in Administrator mode): 
 				<emphasis>mkdir C:\Windows\System32\config\systemprofile\.datacleaner</emphasis>
 				<mediaobject>
 					<imageobject>
