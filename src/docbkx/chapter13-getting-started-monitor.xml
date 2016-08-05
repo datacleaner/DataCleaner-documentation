@@ -30,14 +30,46 @@
 		</para>
 		<mediaobject>
 			<imageobject>
-				<imagedata fileref="monitor_01_login.jpg" format="JPG"
-					scalefit="1" />
+				<imagedata fileref="monitor_01_login.jpg" format="JPG" scalefit="1"/>
 			</imageobject>
 		</mediaobject>
 		<para>In the community edition of DataCleaner, you will find
 			suggestions for login credentials directly on the screen, to get you
 			started quickly.
 		</para>
+		<section>
+			<title>Creating a resources folder on Windows</title>
+			<para>
+				DataCleaner monitor uses a special resources folder. Typically it is created automatically during
+				installation. In an English Windows 7 this would probably be 
+				<emphasis>C:\Users\YOUR_USER_NAME\.datacleaner</emphasis>. However, when using
+				Apache Tomcat and its system service then this resources folder needs to be created manually as
+				<emphasis>C:\Windows\System32\config\systemprofile\.datacleaner</emphasis>. If you encounter any
+				problems while using the system service, make sure the resource folder is available.
+			</para>
+		</section>
+		<section>
+			<title>Manual creation of Windows systemprofile resource folder</title>
+			<para>
+				Windows Explorer does not allow you to create a folder starting with a dot ('.')
+				so use another file manager or command prompt (in Administrator mode): 
+				<emphasis>mkdir C:\Windows\System32\config\systemprofile\.datacleaner</emphasis>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="monitor_01_mkdir.png" format="PNG" scalefit="1"/>
+					</imageobject>
+				</mediaobject>
+				And copy your DataCleaner license file into it. It should be available in your home folder: 
+				<emphasis>copy C:\Users\IEUser\.datacleaner\hi_datacleaner.lic
+					C:\Windows\System32\config\systemprofile\.datacleaner
+				</emphasis>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="monitor_01_copy.png" format="PNG" scalefit="1"/>
+					</imageobject>
+				</mediaobject>
+			</para>
+		</section>
 	</section>
 
 	<section id="connecting_to_your_datastore_montitor">
