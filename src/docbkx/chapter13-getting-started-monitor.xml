@@ -30,7 +30,7 @@
 		</para>
 		<mediaobject>
 			<imageobject>
-				<imagedata fileref="monitor_01_login.jpg" format="JPG" scalefit="1" />
+				<imagedata fileref="monitor_01_login.jpg" format="JPG" scalefit="1"/>
 			</imageobject>
 		</mediaobject>
 		<para>In the community edition of DataCleaner, you will find
@@ -40,51 +40,31 @@
 		<section>
 			<title>Creating a resources folder on Windows</title>
 			<para>
-				DataCleaner monitor uses a special resources folder. Typically it is created automatically during 
-				installation as <emphasis>C:\Windows\Users\USER_NAME\.datacleaner</emphasis>. However, when using 
-				Apache Tomcat and its system service then this resources folder needs to be created manually as 
-				<emphasis>C:\Windows\System32\config\systemprofile\.datacleaner</emphasis>. 
+				DataCleaner monitor uses a special resources folder. Typically it is created automatically during
+				installation as<emphasis>C:\Windows\Users\USER_NAME\.datacleaner</emphasis>. However, when using
+				Apache Tomcat and its system service then this resources folder needs to be created manually as
+				<emphasis>C:\Windows\System32\config\systemprofile\.datacleaner</emphasis>. If you encounter any
+				problems while using the system service, make sure the resource folder is available.
 			</para>
 		</section>
 		<section>
-			<title>Example with a missing systemprofile resources folder</title>
+			<title>Manual creation of Windows systemprofile resource folder</title>
 			<para>
-				Open your browser at <link xl:href="http://localhost:8080/DataCleaner-monitor/scheduling">
-				http://localhost:8080/DataCleaner-monitor/scheduling</link>. 
+				Default Windows explorer does not allow you to create a folder starting with a dot ('.')
+				so use another file manager or command prompt: 
+				<emphasis>mkdir C:\Windows\System32\config\systemprofile\.datacleaner</emphasis>
 				<mediaobject>
 					<imageobject>
-						<imagedata fileref="monitor_01_jobs.png" format="PNG" scalefit="1" />
+						<imagedata fileref="monitor_01_mkdir.png" format="PNG" scalefit="1"/>
 					</imageobject>
 				</mediaobject>
-				When you try to run, let's say, 'Customer duplicates' job in DataCleaner monitor, you get following 
-				exception (missing valid license). 
+				And copy your DataCleaner license file into it. It should be available in your home folder: 
+				<emphasis>copy C:\Users\IEUser\.datacleaner\hi_datacleaner.lic
+					C:\Windows\System32\config\systemprofile\.datacleaner
+				</emphasis>
 				<mediaobject>
 					<imageobject>
-						<imagedata fileref="monitor_01_exception.png" format="PNG" scalefit="1" />
-					</imageobject>
-				</mediaobject>
-				What you need to do is manually create resources folder. Default Windows explorer does not allow you to 
-				create a folder starting with a dot ('.') so use another file manager or command prompt as shown here. 
-			</para>
-			<para>
-				<mediaobject>
-					<imageobject>
-						<imagedata fileref="monitor_01_mkdir.png" format="PNG" scalefit="1" />
-					</imageobject>
-				</mediaobject>
-				And copy your DataCleaner license file into it. It should be available in your home folder. 
-			</para>
-			<para>
-				<mediaobject>
-					<imageobject>
-						<imagedata fileref="monitor_01_copy.png" format="PNG" scalefit="1" />
-					</imageobject>
-				</mediaobject>
-				After the folder is created and the license file is there, reload the DataCleaner monitor application 
-				in your container and rerun the job.
-				<mediaobject>
-					<imageobject>
-						<imagedata fileref="monitor_01_result.png" format="PNG" scalefit="1" />
+						<imagedata fileref="monitor_01_copy.png" format="PNG" scalefit="1"/>
 					</imageobject>
 				</mediaobject>
 			</para>
