@@ -151,32 +151,50 @@
 				either with a single fixed-width size for all columns, or with
 				individual value-widths.
 			</para>
-			<para>Here's an example with a fixed width specification for all
-				columns:
-			</para>
+			<para>Here's an example with a fixed width specification for all columns:</para>
 			<programlisting>
-				&lt;fixed-width-datastore&#160;name="My&#160;file"&gt;
-				&#160;&lt;filename&gt;foobar.txt&lt;/filename&gt;
+				&lt;fixed-width-datastore&#160;name=&quot;FIXED-WIDTH-ALL-COLUMNS&quot;&gt;
+				&#160;&lt;filename&gt;/path/to/the/file.txt&lt;/filename&gt;
 				&#160;&lt;width-specification&gt;
 				&#160;&#160;&lt;fixed-value-width&gt;20&lt;/fixed-value-width&gt;
 				&#160;&lt;/width-specification&gt;
 				&#160;&lt;encoding&gt;UTF-8&lt;/encoding&gt;
+				&#160;&lt;header-line-number&gt;1&lt;/header-line-number&gt;
 				&#160;&lt;fail-on-inconsistencies&gt;true&lt;/fail-on-inconsistencies&gt;
-				&lt;/fixed-width-datastore&gt; </programlisting>
-			<para>Here's an example with individual (3 columns) width
-				specifications:
-			</para>
+				&#160;&lt;skip-ebcdic-header&gt;false&lt;/skip-ebcdic-header&gt;
+				&#160;&lt;eol-present&gt;true&lt;/eol-present&gt;
+				&lt;/fixed-width-datastore&gt;
+			</programlisting>
+			<para>Here's an example with individual (2 columns) width specifications:</para>
 			<programlisting>
-				&lt;fixed-width-datastore&#160;name="My&#160;file"&gt;
-				&#160;&lt;filename&gt;foobar.txt&lt;/filename&gt;
+				&lt;fixed-width-datastore&#160;name=&quot;FIXED-WIDTH-2-COLUMNS&quot;&gt;
+				&#160;&lt;filename&gt;/path/to/the/file.txt&lt;/filename&gt;
 				&#160;&lt;width-specification&gt;
-				&#160;&#160;&lt;value-width&gt;4&lt;/value-width&gt;
-				&#160;&#160;&lt;value-width&gt;17&lt;/value-width&gt;
-				&#160;&#160;&lt;value-width&gt;19&lt;/value-width&gt;
+				&#160;&#160;&lt;value-width&gt;20&lt;/value-width&gt;
+				&#160;&#160;&lt;value-width&gt;30&lt;/value-width&gt;
 				&#160;&lt;/width-specification&gt;
 				&#160;&lt;encoding&gt;UTF-8&lt;/encoding&gt;
+				&#160;&lt;header-line-number&gt;1&lt;/header-line-number&gt;
 				&#160;&lt;fail-on-inconsistencies&gt;true&lt;/fail-on-inconsistencies&gt;
-				&lt;/fixed-width-datastore&gt; </programlisting>
+				&#160;&lt;skip-ebcdic-header&gt;false&lt;/skip-ebcdic-header&gt;
+				&#160;&lt;eol-present&gt;true&lt;/eol-present&gt;
+				&lt;/fixed-width-datastore&gt;
+			</programlisting>
+			<para>Here's an example with an EBCDIC file:</para>
+			<programlisting>
+				&lt;fixed-width-datastore&#160;name=&quot;FIXED-WIDTH-EBCDIC&quot;&gt;
+				&#160;&lt;filename&gt;/path/to/the/file.ebc&lt;/filename&gt;
+				&#160;&lt;width-specification&gt;
+				&#160;&#160;&lt;value-width&gt;2&lt;/value-width&gt;
+				&#160;&#160;&lt;value-width&gt;10&lt;/value-width&gt;
+				&#160;&lt;/width-specification&gt;
+				&#160;&lt;encoding&gt;IBM01148&lt;/encoding&gt;
+				&#160;&lt;header-line-number&gt;0&lt;/header-line-number&gt;
+				&#160;&lt;fail-on-inconsistencies&gt;true&lt;/fail-on-inconsistencies&gt;
+				&#160;&lt;skip-ebcdic-header&gt;true&lt;/skip-ebcdic-header&gt;
+				&#160;&lt;eol-present&gt;false&lt;/eol-present&gt;
+				&lt;/fixed-width-datastore&gt;
+			</programlisting>
 		</section>
 	
 		<section id="configuration_file_datastore_excel">
