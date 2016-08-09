@@ -99,28 +99,28 @@
 			</listitem>
 			<listitem>
 				<para>
-					<emphasis>
-						Ran out of Heap Memory
-					</emphasis>
+					If you have problems with running out of heap memory, you can adjust
+					the amount of memory allocated in the file 'DataCleaner.l4j', alternatively
+					the file 'DataCleaner-console.l4j' if you are running from console.
+				</para>
+
+				<para>
+					In order to increase Java heap memory you can use the following
+					parameters:
+					<itemizedlist>
+						<listitem>
+							<code>-Xms</code> - set the minimum heap size
+						</listitem>
+						<listitem>
+							<code>-Xmx</code> - set the maximum heap size
+						</listitem>
+					</itemizedlist>
 				</para>
 				<para>
-					In the DataCleaner installation folder there is a file called
-					'DataCleaner.l4j', respectively 'DataCleaner-console.l4j'. In that 
-					file can be added any option parameter
-					for Java.
-					In order to increase Java Heap Memory you can use the following
-					parameters:
-					<orderedlist>
-					<listitem>
-						Xms - the minimum size of the heap
-					</listitem>
-					<listitem>
-						Xmx - the maximum size of the heap
-					</listitem>
-					</orderedlist>
-					Eg. -Xms1g (minimum size of the heap is 1 GB)
+					Eg. <code>-Xmx4g</code> to set the maximum size of the heap to 4 GB.
 				</para>
 			</listitem>
+
 
 		</orderedlist>
 
@@ -372,7 +372,7 @@
 						format="PNG" scalefit="1" />
 				</imageobject>
 			</mediaobject>
-			<para>An example job using output data streams: 
+			<para>An example job using output data streams:
 			</para>
 			<mediaobject>
 				<imageobject>
@@ -382,10 +382,10 @@
 			</mediaobject>
 		</section>
 		<tip>
-			<para>				
+			<para>
                  The canvas displays messages (in the bottom of the screen) which
 				contain instructions with the next steps that need to be performed
-				in other to build a valid job.		
+				in other to build a valid job.
 			</para>
 		</tip>
 
