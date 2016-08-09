@@ -147,6 +147,12 @@
 			save the results to a file, simply use your operating systems
 			built-in functionality to pipe command-line output to a file,
 			typically using the '&gt;' operator.</para>
+
+        <para>You can override the datastore the job uses by passing the <emphasis>-ds</emphasis> argument when invoking the command-line interface: 
+        </para>
+        <programlisting>
+			&gt;&#160;datacleaner-console.exe&#160;-job&#160;examples/employees.analysis.xml&#160;-ds&#160;orderdb
+        </programlisting>
 	</section>
 
 	<section id="cli_listing">
