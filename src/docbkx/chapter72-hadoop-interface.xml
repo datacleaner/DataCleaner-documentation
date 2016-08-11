@@ -322,7 +322,7 @@
             </title>
 
             <para>
-                To be able to execute jobs from DataCleaner desktop on a Hadoop Cluster you have set the HADOOP_CONF_DIR or YARN_CONF_DIR environment variables (see <link linkend="hadoop_spark_setup">Setting up Spark and DataCleaner environment</link>) and you also have to set the SPARK_HOME environment variable which points to your Apache Spark location. DataCleaner works with the Apache Spark 1.6 releases which can be downloaded from the Apache Spark website. Now you can run DataCleaner jobs on your Hadoop cluster by using the <emphasis>Run on Hadoop cluster</emphasis> option:
+                To be able to execute jobs from DataCleaner desktop on a Hadoop Cluster you have to set the HADOOP_CONF_DIR or YARN_CONF_DIR environment variables (see <link linkend="hadoop_spark_setup">Setting up Spark and DataCleaner environment</link>) and you also have to set the SPARK_HOME environment variable which points to your Apache Spark location. DataCleaner works with the Apache Spark 1.6 releases which can be downloaded from the Apache Spark website. Now you can run DataCleaner jobs on your Hadoop cluster by using the <emphasis>Run on Hadoop cluster</emphasis> option:
 				<mediaobject>
 					<imageobject>
 						<imagedata fileref="hadoop_run_job_on_cluster.png" format="PNG" scalefit="1"/>
@@ -356,7 +356,7 @@
             <title>Running jobs on a Hadoop Cluster</title>
 
             <para>
-                To be able to execute jobs from DataCleaner monitor on a Hadoop Cluster you have set the HADOOP_CONF_DIR or YARN_CONF_DIR environment variables (see <link linkend="hadoop_spark_setup">Setting up Spark and DataCleaner environment</link>) and you also have to set the SPARK_HOME environment variable which points to your Apache Spark location. DataCleaner works with the Apache Spark 1.6 releases which can be downloaded from the Apache Spark website. Now you can run DataCleaner jobs on your Hadoop cluster by going to the schedule dialog and checking the <emphasis>Run on Hadoop cluster</emphasis> option:
+                To be able to execute jobs from DataCleaner monitor on a Hadoop Cluster you have to set the HADOOP_CONF_DIR or YARN_CONF_DIR environment variables (see <link linkend="hadoop_spark_setup">Setting up Spark and DataCleaner environment</link>) and you also have to set the SPARK_HOME environment variable which points to your Apache Spark location. DataCleaner works with the Apache Spark 1.6 releases which can be downloaded from the Apache Spark website. Now you can run DataCleaner jobs on your Hadoop cluster by going to the schedule dialog and checking the <emphasis>Run on Hadoop cluster</emphasis> option:
 				<mediaobject>
 					<imageobject>
 						<imagedata fileref="hadoop_run_job_on_cluster_monitor.png" format="PNG" scalefit="1"/>
