@@ -297,6 +297,38 @@
         <para>
             Within DataCleaner desktop you can use CSV datastores on HDFS. The commercial editions of DataCleaner also allow you to run jobs on a Hadoop Cluster from DataCleaner desktop.
         </para>
+
+        <section>
+            <title>Configure Hadoop clusters</title>
+            
+            <para>
+                To be able to execute jobs from DataCleaner desktop on a Hadoop Cluster you have a number of configuration options which are managed in the <emphasis>Hadoop clusters</emphasis> tab in the <emphasis>Options</emphasis> dialog.
+                
+                <mediaobject>
+					<imageobject>
+						<imagedata fileref="hadoop_options_clusters.png" format="PNG" scalefit="1"/>
+					</imageobject>
+				</mediaobject>
+
+                <orderedlist>
+                    <listitem>
+                        <para><emphasis>Default</emphasis></para>
+                        <para>By default DataCleaner uses the HADOOP_CONF_DIR and YARN_CONF_DIR environment variables to determine the location of the Hadoop/Yarn configuration files such as <emphasis>core-site.xml</emphasis> and <emphasis>yarn-site.xml</emphasis>.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis>Using configuration directory</emphasis></para>
+                        <para>By clicking the <emphasis>Add Hadoop cluster</emphasis> button and then selecting the <emphasis>Using configuration directory</emphasis> you can register additional Hadoop clusters by adding locations which contain Hadoop/Yarn configuration files.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis>Using direct namenode connection</emphasis></para>
+                        <para>By clicking the <emphasis>Add Hadoop cluster</emphasis> button and then selecting the <emphasis>Using direct namenode connection</emphasis> you can registerd additional Hadoop clusters using their file system URI (e.g. hdfs://bigdatavm:9000/).</para>
+                    </listitem>
+                </orderedlist>
+                
+                If you have added additional Hadoop clusters, when selecting a file on HDFS, it first opens a dialog where you can select from which Hadoop custer you want to select a file.
+            </para>
+            
+        </section>
         
         <section>
             <title>CSV datastores on HDFS</title>
