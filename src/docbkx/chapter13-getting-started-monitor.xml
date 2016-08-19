@@ -187,12 +187,20 @@
 				</para>
 				<mediaobject>
 					<imageobject>
-						<imagedata fileref="monitor_04_scheduling_triggers.jpg"
-							format="JPG" scalefit="1" />
+						<imagedata fileref="monitor_04_scheduling_triggers.png"
+							format="PNG" scalefit="1" />
 					</imageobject>
 				</mediaobject>
-				<para>The three types of triggering are explained on the screen:
+				<para>Three types of triggering are explained on the screen:
 					Periodic trigger, Dependent trigger, Manual trigger.
+				</para>
+				<para>The Hot Folder trigger can be used so that a change to a file
+                    (or a folder) can trigger the job to run. If the hot folder (or the
+                    folder that contains the configured trigger file) contains a
+                    properties file with the same name as the job, or if the configured
+                    trigger file is a properties file, its properties are used to
+                    override configuration elements of DataCleaner monitor when
+                    executing the job.
 				</para>
 			</listitem>
 			<listitem>
