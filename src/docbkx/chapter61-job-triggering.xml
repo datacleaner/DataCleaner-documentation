@@ -101,7 +101,42 @@
 			}
 		</programlisting>
 
-	</section>
+        <para>
+            It is possible to override configuration elements. This can be done in three manners: do a text/plain HTTP POST with a body containing key/value pairs, do an application/json HTTP POST with a body containing json, do a multipart/form-data HTTP POST with a properties file. 
+        </para>
+
+        <para>
+            For instance a HTTP POST where you override the filename of the Customers datastore will look like this:
+        </para>
+        
+        <programlisting>
+			POST /DataCleaner-monitor/repository/{tenant}/jobs/{job}.trigger
+		</programlisting>
+
+        <para>
+            With the 'Content-Type' header 'text/plain' and the body:
+        </para>
+
+        <programlisting>
+			datastoreCatalog.Customers.filename=customers2.csv
+		</programlisting>
+
+        <para>
+            Or with the 'Content-Type' header 'application/json' and the body:
+        </para>
+
+        <programlisting>
+			{
+            &#160;&#160;"datastoreCatalog.Customers.filename"&#160;:&#160;"customers2.csv"
+            }
+		</programlisting>
+
+		<para>
+			See 
+			<link linkend="cli_overriding_configuration_elements">Dynamically overriding configuration elements</link>
+			for more information on overriding configuration elements.
+		</para>
+    </section>
 
 	<section id="monitor_poll_execution_status">
 		<title>Polling for execution status</title>
