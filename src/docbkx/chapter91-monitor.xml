@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns="http://www.oasis-open.org/docbook/4.5" id="embedding_datacleaner"
+		 xsi:schemaLocation="http://www.oasis-open.org/docbook/4.5 http://www.oasis-open.org/docbook/xsd/4.5/docbook.xsd">
+
+	<title>DataCleaner monitor</title>
+
+	<chapterinfo>
+		<abstract>
+			<para>
+				Following sections describe known issues you may encounter while using
+				DataCleaner Monitor. You will also find a workaround or tips how to
+				fix the problem when such a solution exists.
+			</para>
+		</abstract>
+	</chapterinfo>
+
+	<section id="equally_named_metrics">
+		<title>Equally named metrics</title>
+
+		<para>
+			Let's consider a job containing multiple analyzers of the same type which provide sets of equally
+			named metrics.
+		</para>
+		
+		<mediaobject>
+			<imageobject>
+				<imagedata fileref="troubleshooting/01/job.png" format="PNG" scalefit="1"/>
+			</imageobject>
+		</mediaobject>
+		
+		<para>
+			When you want to create a timeline and select the same metrics, just from different metric groups,
+			you will probably end up with a graph showing only one of those metrics.
+		</para>
+		
+		<mediaobject>
+			<imageobject>
+				<imagedata fileref="troubleshooting/01/timeline.png" format="PNG" scalefit="1"/>
+			</imageobject>
+		</mediaobject>
+		<mediaobject>
+			<imageobject>
+				<imagedata fileref="troubleshooting/01/graph.png" format="PNG" scalefit="1"/>
+			</imageobject>
+		</mediaobject>	
+		
+		<para>
+			The problem is that those names are used as unique identifiers which obviously does not work.
+		</para>
+		
+		<subtitle>Workaround</subtitle>
+
+		<para>
+			You can fix this problem in your job by providing unique names for all of your
+			analyzers / components.
+		</para>
+
+		<mediaobject>
+			<imageobject>
+				<imagedata fileref="troubleshooting/01/workaround.png" format="PNG" scalefit="1"/>
+			</imageobject>
+		</mediaobject>
+	</section>
+
+</chapter>
