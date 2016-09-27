@@ -103,4 +103,11 @@
 		<xi:include href="chapter84-embedding-datacleaner.xml" />
 	</part>
 
+	<part>
+		<partinfo>
+			<title>Troubleshooting</title>
+		</partinfo>
+		<xi:include href="chapter91-monitor.xml" />
+	</part>
+
 </book>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xmlns="http://www.oasis-open.org/docbook/4.5" id="embedding_datacleaner"
+		 xsi:schemaLocation="http://www.oasis-open.org/docbook/4.5 http://www.oasis-open.org/docbook/xsd/4.5/docbook.xsd">
+
+	<title>DataCleaner monitor</title>
+
+	<chapterinfo>
+		<abstract>
+			<para>
+				Following sections describe known issues you may encounter while using
+				DataCleaner Monitor. You can also find workarounds and tips on how to 
+				fix the problems when such a solution exists.
+			</para>
+		</abstract>
+	</chapterinfo>
+
+	<section id="equally_named_metrics">
+		<title>Are any metrics missing?</title>
+		
+		<para>
+			Have you selected multiple metrics for a timeline and not all of them are showed in the graph? 
+			There may be a problem with equal names of metrics coming from different metric groups. 
+		</para>
+
+		<mediaobject>
+			<imageobject>
+				<imagedata fileref="troubleshooting/01/timeline.png" format="PNG" scalefit="1"/>
+			</imageobject>
+		</mediaobject>
+		<mediaobject>
+			<imageobject>
+				<imagedata fileref="troubleshooting/01/graph.png" format="PNG" scalefit="1"/>
+			</imageobject>
+		</mediaobject>	
+		
+		<section>
+			<title>Workaround</title>
+
+			<para>
+				You can fix this problem in your job by providing unique names for all of your
+				analyzers / components.
+			</para>
+
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="troubleshooting/01/workaround.png" format="PNG" scalefit="1"/>
+				</imageobject>
+			</mediaobject>
+		</section>
+	</section>
+
+</chapter>
