@@ -9,31 +9,20 @@
 		<abstract>
 			<para>
 				Following sections describe known issues you may encounter while using
-				DataCleaner Monitor. You will also find a workaround or tips how to
-				fix the problem when such a solution exists.
+				DataCleaner Monitor. You can also find workarounds and tips on how to 
+				fix the problems when such a solution exists.
 			</para>
 		</abstract>
 	</chapterinfo>
 
 	<section id="equally_named_metrics">
-		<title>Equally named metrics</title>
+		<title>Are some (equally named) metrics missing?</title>
+		
+		<para>
+			Have you selected multiple metrics for a timeline and not all of them are showed in the graph? 
+			There may be a problem with equal names of metrics coming from different metric groups. 
+		</para>
 
-		<para>
-			Let's consider a job containing multiple analyzers of the same type which provide sets of equally
-			named metrics.
-		</para>
-		
-		<mediaobject>
-			<imageobject>
-				<imagedata fileref="troubleshooting/01/job.png" format="PNG" scalefit="1"/>
-			</imageobject>
-		</mediaobject>
-		
-		<para>
-			When you want to create a timeline and select the same metrics, just from different metric groups,
-			you will probably end up with a graph showing only one of those metrics.
-		</para>
-		
 		<mediaobject>
 			<imageobject>
 				<imagedata fileref="troubleshooting/01/timeline.png" format="PNG" scalefit="1"/>
@@ -45,22 +34,20 @@
 			</imageobject>
 		</mediaobject>	
 		
-		<para>
-			The problem is that those names are used as unique identifiers which obviously does not work.
-		</para>
-		
-		<subtitle>Workaround</subtitle>
+		<section>
+			<title>Workaround</title>
 
-		<para>
-			You can fix this problem in your job by providing unique names for all of your
-			analyzers / components.
-		</para>
+			<para>
+				You can fix this problem in your job by providing unique names for all of your
+				analyzers / components.
+			</para>
 
-		<mediaobject>
-			<imageobject>
-				<imagedata fileref="troubleshooting/01/workaround.png" format="PNG" scalefit="1"/>
-			</imageobject>
-		</mediaobject>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="troubleshooting/01/workaround.png" format="PNG" scalefit="1"/>
+				</imageobject>
+			</mediaobject>
+		</section>
 	</section>
 
 </chapter>
