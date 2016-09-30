@@ -14,6 +14,27 @@
 			</para>
 		</abstract>
 	</chapterinfo>
+	
+	<section id="permissions">
+		<title>Access denied or FileNotFoundException during file upload</title>
+
+		<para>
+			Have you experienced "Access denied" or "java.io.FileNotFoundException" during a file upload
+			(for example a CSV datastore)? Problem can be in permissions that need to be changed. DataCleaner Monitor
+			temporary upload directory is probably not writable. Typical situation
+			like this can happen on Windows if you unzip your Apache Tomcat into "Program Files" folder.
+		</para>
+
+		<section>
+			<title>Workaround</title>
+
+			<para>
+				You can fix this by using proper Windows installer for your Apache Tomcat and/or putting it
+				somewhere else than "Program Files". Another approach might be a manual change of permissions 
+				so that the temporary file upload folder is writable. 
+			</para>
+		</section>
+	</section>
 
 	<section id="equally_named_metrics">
 		<title>Are any metrics missing?</title>
