@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.oasis-open.org/docbook/4.5" xmlns:xl="http://www.w3.org/1999/xlink"
+         xsi:schemaLocation="http://www.oasis-open.org/docbook/4.5 http://www.oasis-open.org/docbook/xsd/4.5/docbook.xsd">
+
+    <title>
+        Express Data Prep Wizard
+        <inlinemediaobject>
+            <imageobject>
+                <imagedata fileref="notice_commercial_editions_only.png"
+                           format="PNG"/>
+            </imageobject>
+        </inlinemediaobject>
+    </title>
+    <chapterinfo>
+        <abstract>
+            <para>
+                Express Data Prep Wizard is a tool available in Commercial Editions that helps
+                customers to process their postal data faster and more efficiently.
+            </para>
+        </abstract>
+    </chapterinfo>
+
+    <section id="edp_wizard_context">
+        <title>Context</title>
+        <para>
+            Use this wizard on yours or your client's customer lists to develop an automated data processing
+            solution to optimize data, improve contact, remove waste as well as (optionally) secure postal
+            discounts for more effective customer communications.
+        </para>
+
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="edp-wizard-welcome-page.png" format="PNG" scalefit="1"/>
+            </imageobject>
+        </mediaobject>
+
+        <para>
+            This wizard (How can I effectively communicate with customers) walks you through the necessary
+            configuration that is used to create a data-cleansing job which can be uploaded to DataCleaner Monitor.
+            Hot folder functionality allows you to continuously upload new raw data which triggers the job execution.
+            Results are automatically put to the predefined directory. Among other things you can find there
+            <emphasis>cleansed-data</emphasis>, <emphasis>invalid-data</emphasis> and PDF report containing
+            financial summary.
+        </para>
+    </section>
+
+    <section id="edp_wizard_installation">
+        <title>Installation</title>
+        <para>
+            During a typical DataCleaner Enterprise installation do not forget to check
+
+            <emphasis>Express Data Prep</emphasis>.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-install-02.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
+
+            This option is only enabled if you also check
+
+            <emphasis>Name and Address correction (on premise)</emphasis>
+            item.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-install-01.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
+
+            Proceed with the installation and run DataCleaner Desktop. Express Data Prep Wizard should be available
+            on the welcome page.
+        </para>
+    </section>
+
+    <section id="edp_wizard_configuration">
+        <title>Configuration</title>
+        <para>
+            The Express Data Prep Wizard requires a few inputs from the user. Some values can be pre-defined so that
+            they can be automatically put to the particular fields in the UI. This is achieved through a standard java
+            properties file.
+        </para>
+
+        <emphasis>Properties file location</emphasis>
+        <para>
+            The wizard looks for the file in <emphasis>DATACLEANER_HOME</emphasis> directory. On Windows this
+            can be: <emphasis>C:\Users\Username\.datacleaner\5.2.0\psp-wizard.properties</emphasis>.
+            On Linux (when running with <emphasis>datacleaner.sh</emphasis>) it is in the installation directory of
+            the DataCleaner. So for example: <emphasis>/home/username/DataCleaner/psp-wizard.properties</emphasis>.
+        </para>
+
+        <emphasis>Items</emphasis>
+        <table frame='all'>
+            <title>Properties</title>
+            <tgroup cols='4' align='left' colsep='1' rowsep='1'>
+                <colspec colname='c1'/>
+                <colspec colname='c2'/>
+                <colspec colname='c3'/>
+                <colspec colname='c4'/>
+                <colspec colnum='4' colname='c4'/>
+                <thead>
+                    <row>
+                        <entry>Key</entry>
+                        <entry>Example value</entry>
+                        <entry>Required?</entry>
+                        <entry>Meaning</entry>
+                    </row>
+                </thead>
+                <tbody>
+                    <row>
+                        <entry>psp.name.service.url</entry>
+                        <entry>localhost:3180</entry>
+                        <entry>yes</entry>
+                        <entry>server for name and phone cleansing (typically Suite6 installation)</entry>
+                    </row>
+                    <row>
+                        <entry>psp.architect.hostname</entry>
+                        <entry>localhost</entry>
+                        <entry>yes</entry>
+                        <entry>server for address cleansing (Mailroom Toolkit aka Satori Architect</entry>
+                    </row>
+                    <row>
+                        <entry>psp.architect.port</entry>
+                        <entry>5150</entry>
+                        <entry>yes</entry>
+                        <entry>port for address cleansing (Mailroom Toolkit aka Satori Architect</entry>
+                    </row>
+                    <row>
+                        <entry>psp.suppression.username</entry>
+                        <entry>username</entry>
+                        <entry>yes</entry>
+                        <entry>credentials for additional suppression services</entry>
+                    </row>
+                    <row>
+                        <entry>psp.suppression.password</entry>
+                        <entry>password</entry>
+                        <entry>yes</entry>
+                        <entry>credentials for additional suppression services</entry>
+                    </row>
+                    <row>
+                        <entry>psp.suppression.email</entry>
+                        <entry>username@domain.com</entry>
+                        <entry>yes</entry>
+                        <entry>target e-mail for suppression services notifications</entry>
+                    </row>
+                    <row>
+                        <entry>psp.outgoing.file.path</entry>
+                        <entry>C:\outgoing</entry>
+                        <entry>no</entry>
+                        <entry>directory for output data files (valid, invalid, samples)</entry>
+                    </row>
+                    <row>
+                        <entry>psp.postalpresorting.defaulttemplatename</entry>
+                        <entry>mailmark</entry>
+                        <entry>no</entry>
+                        <entry>template for presorting service</entry>
+                    </row>
+                    <row>
+                        <entry>psp.postalpresorting.defaultfilesfolder</entry>
+                        <entry>C:\presorting</entry>
+                        <entry>no</entry>
+                        <entry>directory for presorting service output (PDF report)</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </section>
+
+    <section id="edp_wizard_datastores">
+        <title>Datastores</title>
+        <emphasis>Supported formats</emphasis>
+        <para>
+            Express Data Prep Wizard supports CSV (comma separated value) and Excel data files. You need to provide
+            one within the wizard so that desired format (column types; header) can be recognized. No real data is
+            required to be in this file. Just column names.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-wizard-datastore-page.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
+        </para>
+
+        <para>
+            Later on, when you upload your data files to the incoming hot folder, all those files have to follow
+            exactly the same format (header). Otherwise the job execution fails.
+        </para>
+
+        TODO: link to the incoming-hot-folder/format-match
+    </section>
+
+    <section id="edp_wizard_input_output">
+        <title>Input&amp;output</title>
+        <emphasis>Incoming hot folder</emphasis>
+        <para>
+            TODO: datastore format match
+            TODO: img
+        </para>
+
+        <emphasis>Outgoing folder</emphasis>
+        <para>
+            TODO: img
+        </para>
+    </section>
+
+    <section id="edp_wizard_use_case">
+        <title>Typical use case</title>
+
+        <emphasis>DataCleaner Desktop</emphasis>
+        <para>
+            After you start DataCleaner Desktop, you will see a welcome page. It can contain multiple wizards,
+            select <emphasis>How can I effectively communicate with customers?</emphasis>.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-wizard-welcome-page.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
+        </para>
+
+        <emphasis>Datastore selection</emphasis>
+        <para>
+            On the next page you will be asked to provide a datastore. See TODO:link-datastores for details.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-wizard-datastore-page.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
+        </para>
+
+        <emphasis>Input mapping</emphasis>
+        <para>
+            After you provide input data file (datastore), its column names will be shown so that you can
+            map those columns to their meanings. <emphasis>Address line</emphasis>, <emphasis>Postal code</emphasis>
+            and <emphasis>City</emphasis> are required items.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-wizard-mapping-page.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
+        </para>
+
+        <emphasis>Services settings</emphasis>
+        <para>
+            On the next page you can select which additional address services should be enabled. By default
+            all of them are checked. You can also specify output directories where the final result files will
+            be stored.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-wizard-services-page.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
+        </para>
+
+        <emphasis>Suppression settings</emphasis>
+        <para>
+            On this page you can configure which records will be sent to <emphasis>mailing</emphasis>
+            service. You can for example decide that all potential problems with e-mail and phone values should
+            be ignored as long as address data is fine. You can also specify to leave out records that do not
+            contain any value in particular column.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-wizard-suppression-settings-page.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
+        </para>
+
+        <emphasis>Output columns</emphasis>
+        <para>
+            This page provides you with all potential output columns that can be written to the final output files.
+            Since there is a lot of them you can decide to leave intermediary and/or original columns out.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-wizard-output-page.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
+        </para>
+
+        <emphasis>What to do with the job?</emphasis>
+        <para>
+            This is the final wizard page where you can decide what to do with the job that has already been
+            created. You can execute it right away, take a look at the job itself or upload it to DataCleaner Monitor.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-wizard-buttons-page.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
+        </para>
+
+        <emphasis>Job preview</emphasis>
+        <para>
+            When you decide to open the job, you will see something similar to this example. Here you can change
+            any configuration you want and then execute the job.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-wizard-job.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
+        </para>
+
+        <emphasis>Upload to DataCleaner Monitor</emphasis>
+        <para>
+            If you decide to upload the job to DataCleaner Monitor, an upload dialog will appear. Here you can edit
+            pre-filled name of the job and specify <emphasis>incoming hot folder</emphasis> if desired. This path
+            serves as input directory where you can upload your data files to be automatically picked up and processed.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-wizard-upload.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
+        </para>
+
+        TODO: Monitor part
+    </section>
+</chapter>

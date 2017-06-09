@@ -92,7 +92,14 @@
 		<xi:include href="chapter76-pentaho-integration.xml" />
 	</part>
 
-	<part>
+    <part>
+        <partinfo>
+            <title>DataCleaner welcome page wizards</title>
+        </partinfo>
+        <xi:include href="chapter77-express-data-prep.xml"/>
+    </part>
+
+    <part>
 		<partinfo>
 			<title>Developer's guide</title>
 		</partinfo>
