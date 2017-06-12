@@ -36,30 +36,37 @@
         </mediaobject>
 
         <para>
-            This wizard (How can I effectively communicate with customers) walks you through the necessary
+            The wizard <quote>How can I effectively communicate with customers</quote> walks you through the necessary
             configuration that is used to create a data-cleansing job which can be uploaded to DataCleaner Monitor.
             Hot folder functionality allows you to continuously upload new raw data which triggers the job execution.
-            Results are automatically put to the predefined directory. Among other things you can find there
-            <emphasis>cleansed-data</emphasis>, <emphasis>invalid-data</emphasis> and PDF report containing
-            financial summary.
+            The results are automatically put to the predefined directory. Among other things you can find there final
+            <emphasis>cleansed</emphasis> and <emphasis>invalid data</emphasis> and a PDF report containing
+            financial summary there.
+        </para>
+
+        <emphasis>Available services</emphasis>
+        <para>
+            <itemizedlist mark='services'>
+                <listitem><para>Name Cleansing</para></listitem>
+                <listitem><para>Address Correction</para></listitem>
+                <listitem><para>Email Correction</para></listitem>
+                <listitem><para>Phone Correction</para></listitem>
+                <listitem><para>Sorting</para></listitem>
+            </itemizedlist>
         </para>
     </section>
 
     <section id="edp_wizard_installation">
         <title>Installation</title>
         <para>
-            During a typical DataCleaner Enterprise installation do not forget to check
-
+            During a typical DataCleaner Enterprise installation remember to check
             <emphasis>Express Data Prep</emphasis>.
             <mediaobject>
                 <imageobject>
                     <imagedata fileref="edp-install-02.png" format="PNG" scalefit="1"/>
                 </imageobject>
             </mediaobject>
-
-            This option is only enabled if you also check
-
-            <emphasis>Name and Address correction (on premise)</emphasis>
+            This option is enabled after you have selected <emphasis>Name and Address correction (on premise)</emphasis>
             item.
             <mediaobject>
                 <imageobject>
@@ -143,7 +150,7 @@
                         <entry>target e-mail for suppression services notifications</entry>
                     </row>
                     <row>
-                        <entry>psp.outgoing.file.path</entry>
+                        <entry>psp.outgoing.output.file.path</entry>
                         <entry>C:\outgoing</entry>
                         <entry>no</entry>
                         <entry>directory for output data files (valid, invalid, samples)</entry>
@@ -166,8 +173,10 @@
 
         <emphasis>DataCleaner Monitor setup</emphasis>
         <para>
-            In order to use <emphasis>hot folder functionality</emphasis> you have to configure DataCleaner Monitor
-            connection first. After you deploy the war file and have it running in your browser
+            In order to use <emphasis>hot folder functionality</emphasis>
+            (see <link linkend="monitor_scheduling_jobs">Scheduling jobs</link> section for details)
+            you have to configure DataCleaner Monitor connection first. After you deploy the war file and have it
+            running in your browser
             (see <link linkend="installing_datacleaner_monitor">DataCleaner Monitor</link> for details),
             go to <emphasis>More/DataCleaner monitor</emphasis> menu item.
             <mediaobject>
@@ -189,7 +198,8 @@
         <title>Datastores</title>
         <emphasis>Supported formats</emphasis>
         <para>
-            Express Data Prep Wizard supports CSV (comma separated value) and Excel data files. You need to provide
+            For <emphasis>hot folder functionality</emphasis> Express Data Prep Wizard supports
+            CSV (comma separated value) and Excel data files. You need to provide
             one within the wizard so that desired format (header) can be recognized. No real data is
             required to be in this file. Just column names.
             <mediaobject>
@@ -203,7 +213,10 @@
             exactly the same format (header). Otherwise the job execution fails.
         </para>
         <para>
-            See <link linkend="edp_wizard_input_output">Input&amp;output</link> section for more details.
+            If you do not need to use <emphasis>hot folder functionality</emphasis> many other data formats/sources
+            can be used. See <link linkend="connecting_to_your_datastore">Connecting to your datastore</link> and/or
+            <link linkend="edp_wizard_input_output">Express Data Prep Wizzard -- Input&amp;output</link> sections
+            for more details.
         </para>
     </section>
 
