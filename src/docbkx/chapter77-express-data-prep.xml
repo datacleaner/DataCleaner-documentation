@@ -116,13 +116,13 @@
                         <entry>psp.architect.hostname</entry>
                         <entry>localhost</entry>
                         <entry>yes</entry>
-                        <entry>server for address cleansing (Mailroom Toolkit aka Satori Architect</entry>
+                        <entry>server for address cleansing (Mailroom Toolkit aka Satori Architect)</entry>
                     </row>
                     <row>
                         <entry>psp.architect.port</entry>
                         <entry>5150</entry>
                         <entry>yes</entry>
-                        <entry>port for address cleansing (Mailroom Toolkit aka Satori Architect</entry>
+                        <entry>port for address cleansing (Mailroom Toolkit aka Satori Architect)</entry>
                     </row>
                     <row>
                         <entry>psp.suppression.username</entry>
@@ -170,7 +170,7 @@
         <emphasis>Supported formats</emphasis>
         <para>
             Express Data Prep Wizard supports CSV (comma separated value) and Excel data files. You need to provide
-            one within the wizard so that desired format (column types; header) can be recognized. No real data is
+            one within the wizard so that desired format (header) can be recognized. No real data is
             required to be in this file. Just column names.
             <mediaobject>
                 <imageobject>
@@ -178,26 +178,44 @@
                 </imageobject>
             </mediaobject>
         </para>
-
         <para>
             Later on, when you upload your data files to the incoming hot folder, all those files have to follow
             exactly the same format (header). Otherwise the job execution fails.
         </para>
-
-        TODO: link to the incoming-hot-folder/format-match
+        <para>
+            See <link linkend="edp_wizard_input_output">Input&amp;output</link> section for more details.
+        </para>
     </section>
 
     <section id="edp_wizard_input_output">
         <title>Input&amp;output</title>
         <emphasis>Incoming hot folder</emphasis>
         <para>
-            TODO: datastore format match
-            TODO: img
+            In the final phase of the wizard, when you decide to upload the job to DataCleaner Monitor, you can specify
+            a directory that will be treated as <emphasis>incoming hot folder</emphasis>. This directory will be then
+            regularly scanned for changes. Whenever such a change occurs, new/changed file will be considered as
+            a new data input. That will trigger the job execution and process the data.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-wizard-upload.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
+        </para>
+        <para>
+            It is important to keep the file format (header) that is required by the job. Incorrect
+            file format will be recognized and reported within a failed job execution.
         </para>
 
-        <emphasis>Outgoing folder</emphasis>
+        <emphasis>Outgoing folders</emphasis>
         <para>
-            TODO: img
+            On the <link linkend="service_settings_page">Service settings page</link> you can specify
+            <emphasis>outgoing folder path</emphasis> and <emphasis>outgoing presorting reports path</emphasis>. Both
+            of these directories will serve as target directory where final output files will be put.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-wizard-services-page.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
         </para>
     </section>
 
@@ -217,7 +235,8 @@
 
         <emphasis>Datastore selection</emphasis>
         <para>
-            On the next page you will be asked to provide a datastore. See TODO:link-datastores for details.
+            On the next page you will be asked to provide a datastore.
+            See <link linkend="edp_wizard_datastores">datastores</link> for details.
             <mediaobject>
                 <imageobject>
                     <imagedata fileref="edp-wizard-datastore-page.png" format="PNG" scalefit="1"/>
@@ -237,7 +256,7 @@
             </mediaobject>
         </para>
 
-        <emphasis>Services settings</emphasis>
+        <emphasis id="service_settings_page">Services settings</emphasis>
         <para>
             On the next page you can select which additional address services should be enabled. By default
             all of them are checked. You can also specify output directories where the final result files will
@@ -299,7 +318,8 @@
         <para>
             If you decide to upload the job to DataCleaner Monitor, an upload dialog will appear. Here you can edit
             pre-filled name of the job and specify <emphasis>incoming hot folder</emphasis> if desired. This path
-            serves as input directory where you can upload your data files to be automatically picked up and processed.
+            serves as an input directory where you can upload your data files to be automatically picked up and
+            processed.
             <mediaobject>
                 <imageobject>
                     <imagedata fileref="edp-wizard-upload.png" format="PNG" scalefit="1"/>
@@ -307,6 +327,17 @@
             </mediaobject>
         </para>
 
-        TODO: Monitor part
+        <para>
+            On the following screenshot you can see the jobs listing in DataCleaner Monitor.
+            <emphasis>Customer communication job 20170612 090930</emphasis> is the one that has been uploaded. Below
+            the job name you can see <emphasis>schedule</emphasis> settings set to incoming hot folder.
+            <mediaobject>
+                <imageobject>
+                    <imagedata fileref="edp-wizard-monitor-jobs.png" format="PNG" scalefit="1"/>
+                </imageobject>
+            </mediaobject>
+            When you from now on put a new data file to that directory, job execution starts and output files are
+            produced (they are available in configured output directories).
+        </para>
     </section>
 </chapter>
