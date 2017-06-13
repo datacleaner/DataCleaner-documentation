@@ -154,7 +154,7 @@
                         <entry>target e-mail for suppression services notifications</entry>
                     </row>
                     <row>
-                        <entry>edp.outgoing.output.file.path</entry>
+                        <entry>edp.outgoing.folder</entry>
                         <entry>C:\outgoing</entry>
                         <entry>no</entry>
                         <entry>directory for output data files (valid, invalid, samples)</entry>
