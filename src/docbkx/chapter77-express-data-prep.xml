@@ -90,9 +90,13 @@
         <emphasis>Properties file location</emphasis>
         <para>
             The wizard looks for the file in <emphasis>DATACLEANER_HOME</emphasis> directory. On Windows this
-            can be: <emphasis>C:\Users\Username\.datacleaner\5.2.0\psp-wizard.properties</emphasis>.
-            On Linux (when running with <emphasis>datacleaner.sh</emphasis>) it is in the installation directory of
-            the DataCleaner. So for example: <emphasis>/home/username/DataCleaner/psp-wizard.properties</emphasis>.
+            can be: <emphasis>C:\Users\Username\.datacleaner\5.2.0\edp-wizard.properties</emphasis>.
+            On Linux for example: <emphasis>/home/username/.datacleaner/5.2.0/edp-wizard.properties</emphasis>.
+        </para>
+        <para>
+            You should find a sample of this properties file (<emphasis>edp-wizard.properties</emphasis>)
+            in the program directory after the installation. Then you have to manually copy it to the required location
+            (<emphasis>DATACLEANER_HOME</emphasis>).
         </para>
 
         <emphasis>Items</emphasis>
@@ -114,55 +118,55 @@
                 </thead>
                 <tbody>
                     <row>
-                        <entry>psp.name.service.url</entry>
+                        <entry>edp.name.service.url</entry>
                         <entry>localhost:3180</entry>
                         <entry>yes</entry>
                         <entry>server for name and phone cleansing (typically Suite6 installation)</entry>
                     </row>
                     <row>
-                        <entry>psp.architect.hostname</entry>
+                        <entry>edp.architect.hostname</entry>
                         <entry>localhost</entry>
                         <entry>yes</entry>
                         <entry>server for address cleansing (Mailroom Toolkit aka Satori Architect)</entry>
                     </row>
                     <row>
-                        <entry>psp.architect.port</entry>
+                        <entry>edp.architect.port</entry>
                         <entry>5150</entry>
                         <entry>yes</entry>
                         <entry>port for address cleansing (Mailroom Toolkit aka Satori Architect)</entry>
                     </row>
                     <row>
-                        <entry>psp.suppression.username</entry>
+                        <entry>edp.suppression.username</entry>
                         <entry>username</entry>
                         <entry>yes</entry>
                         <entry>credentials for additional suppression services</entry>
                     </row>
                     <row>
-                        <entry>psp.suppression.password</entry>
+                        <entry>edp.suppression.password</entry>
                         <entry>password</entry>
                         <entry>yes</entry>
                         <entry>credentials for additional suppression services</entry>
                     </row>
                     <row>
-                        <entry>psp.suppression.email</entry>
+                        <entry>edp.suppression.email</entry>
                         <entry>username@domain.com</entry>
                         <entry>yes</entry>
                         <entry>target e-mail for suppression services notifications</entry>
                     </row>
                     <row>
-                        <entry>psp.outgoing.output.file.path</entry>
+                        <entry>edp.outgoing.output.file.path</entry>
                         <entry>C:\outgoing</entry>
                         <entry>no</entry>
                         <entry>directory for output data files (valid, invalid, samples)</entry>
                     </row>
                     <row>
-                        <entry>psp.postalpresorting.defaulttemplatename</entry>
+                        <entry>edp.postalpresorting.defaulttemplatename</entry>
                         <entry>mailmark</entry>
                         <entry>no</entry>
                         <entry>template for presorting service</entry>
                     </row>
                     <row>
-                        <entry>psp.postalpresorting.defaultfilesfolder</entry>
+                        <entry>edp.postalpresorting.defaultfilesfolder</entry>
                         <entry>C:\presorting</entry>
                         <entry>no</entry>
                         <entry>directory for presorting service output (PDF report)</entry>
