@@ -5,11 +5,11 @@
 
 	<bookinfo>
 		<title>Reference documentation</title>
-		<productname>DataCleaner</productname>
+		<productname>DataCleaner community edition</productname>
 		<releaseinfo><?eval ${project.version}?>
 		</releaseinfo>
 		<copyright>
-			<year>2008-2015</year>
+			<year>2008-2017</year>
 		</copyright>
 		<legalnotice>
 			<para>Copies of this document may be made for your own use and for
@@ -27,7 +27,6 @@
 
 		<xi:include href="chapter11-concepts.xml" />
 		<xi:include href="chapter12-getting-started-desktop.xml" />
-		<xi:include href="chapter13-getting-started-monitor.xml" />
 	</part>
 
 	<part>
@@ -58,24 +57,6 @@
 		<xi:include href="chapter43-logging.xml" />
 		<xi:include href="chapter44-database-drivers.xml" />
 	</part>
-	
-	<part>
-		<partinfo>
-			<title>DataCleaner monitor repository</title>
-		</partinfo>
-		<xi:include href="chapter51-repository-configuration.xml" />
-		<xi:include href="chapter52-repository-layout.xml" />
-	</part>
-	
-	<part>
-		<partinfo>
-			<title>DataCleaner monitor web services</title>
-		</partinfo>
-		<xi:include href="chapter61-job-triggering.xml" />
-		<xi:include href="chapter62-repository-navigation.xml" />
-		<xi:include href="chapter63-metric-services.xml" />
-		<xi:include href="chapter64-atomic-transformations.xml" />
-	</part>
 
 	<part>
 		<partinfo>
@@ -93,13 +74,6 @@
 	</part>
 
     <part>
-        <partinfo>
-            <title>DataCleaner welcome page wizards</title>
-        </partinfo>
-        <xi:include href="chapter77-express-data-prep.xml"/>
-    </part>
-
-    <part>
 		<partinfo>
 			<title>Developer's guide</title>
 		</partinfo>
@@ -108,13 +82,6 @@
 		<xi:include href="chapter82-developer-resources.xml" />
 		<xi:include href="chapter83-extension-packaging.xml" />
 		<xi:include href="chapter84-embedding-datacleaner.xml" />
-	</part>
-
-	<part>
-		<partinfo>
-			<title>Troubleshooting</title>
-		</partinfo>
-		<xi:include href="chapter91-monitor.xml" />
 	</part>
 
 </book>

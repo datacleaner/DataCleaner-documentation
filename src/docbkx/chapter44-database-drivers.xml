@@ -66,38 +66,4 @@
 		</para>
 
 	</section>
-
-	<section id="database_drivers_server">
-		<title>Installing Database drivers in DataCleaner monitor</title>
-		<para>If you want to install database drivers in the DataCleaner
-			monitor web application, you should first consider if you want the
-			driver installed only as part of the single web application or if it
-			should be globally registered within your web server/container.
-		</para>
-
-		<orderedlist>
-			<listitem>
-				<para>
-					<emphasis>Installing database driver in Container</emphasis>
-					: Refer to your container's documentation. Usually the process is a
-					simple matter of copying the driver JAR files to a folder in the
-					web container's workspace. For instance, if you're using Apache
-					Tomcat, copy the driver JAR file(s) to the 'lib' folder of Tomcat.
-				</para>
-			</listitem>
-			<listitem>
-				<para>
-					<emphasis>Installing database driver in the web application
-					</emphasis>
-					: First, locate where the DataCleaner monitor .war file is deployed
-					and 'exploded' into a directory. Within this directory you will
-					find the folder 'WEB-INF/lib'. Copy the database driver file(s) into
-					this directory.
-				</para>
-			</listitem>
-		</orderedlist>
-
-		<para>We recommend installing drivers in the container. This makes your web application easier to upgrade and manage.</para>
-	</section>
-
 </chapter>

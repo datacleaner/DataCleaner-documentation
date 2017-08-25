@@ -189,18 +189,6 @@
 			registration
 			forms and more.
 		</para>
-		<para>As of version 3, DataCleaner now also includes a monitoring web
-			application, dubbed "DataCleaner monitor". The monitor is a server
-			application that supports orchestrating and scheduling of jobs, as
-			well as exposing metrics through web services and through interactive
-			timelines and reports. It also supports the configuration and
-			job-building process through wizards and management pages for all the
-			components of the solution. As such, we like to say that the
-			DataCleaner monitor provides a good
-			foundation for the
-			infrastructure needed in a Master Data Management
-			hub.
-		</para>
 
 	</section>
 

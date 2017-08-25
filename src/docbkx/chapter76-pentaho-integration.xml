@@ -64,57 +64,6 @@
 		</para>
 	</section>
 
-	<section id="pentaho_run_pdi_jobs_from_dc_monitor">
-		<title>Run Pentaho Data Integration jobs in DataCleaner monitor
-		</title>
-		<para>
-			DataCleaner monitor can also be used to run and schedule other
-			jobs
-			than just DataCleaner jobs. An example of this is using
-			DataCleaner
-			monitor to schedule a Pentaho Data Integration
-			transformation. The
-			interoperability in this case is provided through the
-			<emphasis>Carte</emphasis>
-			service provided by Pentaho Data Integration.
-		</para>
-
-		<tip>
-			<para>
-				For more information on configuring Carte, we recommend the Pentaho
-				wiki page on the subject:
-
-				<link xl:href="http://wiki.pentaho.com/display/EAI/Carte+Configuration">http://wiki.pentaho.com/display/EAI/Carte+Configuration
-				</link>
-
-			</para>
-
-		</tip>
-
-		<para>To set up the job in DataCleaner monitor, go to the 'Scheduling'
-			page and click 'Build job'. Select the Pentaho Data Integration
-			transformation option:
-		</para>
-		<mediaobject>
-			<imageobject>
-				<imagedata fileref="monitor_06_pentaho_job.jpg" format="JPG"
-					scalefit="1" />
-			</imageobject>
-		</mediaobject>
-		<para>
-			Follow the on-screen wizard to connect to the Pentaho
-			<emphasis>Carte</emphasis>
-			service and select the transformation to execute.
-		</para>
-		<para>
-			When the job has been registered, you can use DataCleaner monitor to
-			schedule it, and to monitor execution metrics exposed by the job on
-			the 'Dashboard' page (read more in the
-			<link linkend="monitor_dashboard_page">section about metric charting</link>
-			).
-		</para>
-	</section>
-
 	<section id="pentaho_run_dc_jobs_from_pdi">
 		<title>Run DataCleaner jobs in Pentaho Data Integration</title>
 
