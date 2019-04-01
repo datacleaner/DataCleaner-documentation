@@ -253,6 +253,47 @@
 			making it impossible to run the transformation otherwise.
 		</para>
 	</section>
+	
+	<section id="ml_transformers">
+		<title>Apply classifier &amp; Apply regression</title>
+		<para>
+			The
+			<emphasis>Apply classifier</emphasis> and <emphasis>Apply regression</emphasis>
+			transformers allows the DataCleaner user to apply a trained Machine Learning model onto incoming records.
+			See the <link linkend="ml_analyzers">Machine Learning analyzers</link> section for details on how to train
+			such a model.
+		</para>
+		<para>The two transformers share these properties to be configured:
+		</para>
+		<table>
+			<title>Machine learning transformer properties</title>
+			<tgroup cols="2">
+				<thead>
+					<row>
+						<entry>Property</entry>
+						<entry>Description</entry>
+					</row>
+				</thead>
+				<tbody>
+					<row>
+						<entry>Features</entry>
+						<entry>
+							Select the columns that are used for feature extraction.
+							The size and order of columns must match the columns used
+							when training the model.
+						</entry>
+					</row>
+					<row>
+						<entry>Model file</entry>
+						<entry>
+							The file containing the model as it was persisted during
+							training.
+						</entry>
+					</row>
+				</tbody>
+			</tgroup>
+		</table>
+	</section>
 
 	<section id="equals_filter">
 		<title>Equals</title>

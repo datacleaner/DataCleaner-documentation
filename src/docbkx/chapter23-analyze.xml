@@ -512,4 +512,86 @@
 		</para>
 	</section>
 
+	<section id="ml_analyzers">
+		<title>Machine Learning analyzers</title>
+		<para>
+			DataCleaner offers a set of analyzers with the purpose of training or testing
+			Machine Learning models. The idea is that records can be used to build ("train") a
+			mathematical model that describes the value of any given attribute/column based on
+			the other attributes of the record. For example, you could classify or predict house
+			prices based on historical data given price and relevant factors for the price such as
+			size, location, condition and time of year.
+		</para>
+		<para>
+			There are two use-cases that are supported:
+		</para>
+		<orderedlist>
+			<listitem>
+				<para>
+					<emphasis>Classification</emphasis>, which is the act of determining a class
+					of record. For example, you may want to classify what product most likely
+					fits a particular customer based on the attributes of the customer.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<emphasis>Regression</emphasis>, which is determines a continuous value on
+					a numeric scale. For example, you might want try to predict the price of a house
+					based on the traits of the house.
+				</para>
+			</listitem>
+		</orderedlist>
+		<para>
+			DataCleaner has built in support for the following types of Machine Learning models:
+		</para>
+		<orderedlist>
+			<listitem>
+				<para>Random Forests</para>
+			</listitem>
+			<listitem>
+				<para>Support Vector Machines</para>
+			</listitem>
+			<listitem>
+				<para>Neural Networks</para>
+			</listitem>
+		</orderedlist>
+		<para>
+			When training a model, you provide data that represents truthful observations. These records
+			have to include values for the attribute that you will be trying to classify or predict
+			using regression.
+		</para>
+		<para>
+			Attributes that affect the prediction or classification are called features. Feature has to be
+			numeric as to provide meaningful mathematical input to the model. So sometimes a
+			feature has to be extracted from a raw value instead of just applied as-is. For example, in textual
+			analysis where you're trying to determine the language or nature of a piece of text, you will
+			typically want to extract n-grams from the text. DataCleaner offers the following feature extraction
+			strategies (which you select when adding a column as input to the training component):
+		</para>
+		<orderedlist>
+			<listitem>
+				<para><emphasis>Direct (0.0 to 1.0)</emphasis>, Takes numerical values as-is.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis>Scaled (Min-Max)</emphasis>, Scales numerical values from the minimum to the maximum value observed.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis>Vector (One-Hot Encoding)</emphasis>, Generates a feature for every distinct value encountered. The values of the feature will be either 0 or 1 to indicate whether or not the record has that particular value.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis>Vector (2-gram)</emphasis>, Generates a feature for every 2-gram observed in the text.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis>Vector (3-gram)</emphasis>, Generates a feature for every 3-gram observed in the text.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis>Vector (4-gram)</emphasis>, Generates a feature for every 4-gram observed in the text.</para>
+			</listitem>
+			<listitem>
+				<para><emphasis>Vector (5-gram)</emphasis>, Generates a feature for every 5-gram observed in the text.</para>
+			</listitem>
+		</orderedlist>
+		
+	</section>
+
 </chapter>
